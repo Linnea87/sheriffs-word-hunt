@@ -112,7 +112,7 @@ This low-contrast, texture-driven UI supports a **more consistent and less visua
 ![Color Palette](docs/color_palette.png)
 
 ### Wireframe
-The wireframes were created in [Figma](https://www.figma.com/) and illustrate the core navigation structure of the app:
+The wireframes were created in [Figma](https://www.figma.com/) and illustrate the core layout and screen structure of the app.
 
 ![Wireframes](docs/wireframes.png)
 
