@@ -43,7 +43,7 @@ Players step into the role of junior deputies in a Wild West town where a myster
 Sheriff’s Word Hunt helps children practice language and reading comprehension through short, game-like word puzzles wrapped in a playful Wild West theme.
 
 ### App Goal
-The goal is to create a motivating and intuitive learning experience where children can strengthen vocabulary skills without feeling like they are doing schoolwork.
+The goal is to create an engaging and intuitive learning experience where children can strengthen overall language skills — including reading comprehension, context understanding, and vocabulary — through short, playful challenges.
 
 ### Developer Goals
 - Maintain clean, testable architecture
