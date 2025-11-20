@@ -13,10 +13,9 @@ Players step into the role of junior deputies in a Wild West town where a myster
     - [Communication](#communication)
     - [Interaction & Experience Principles](#interaction--experience-principles)
 - [Agile Planning](#agile-planning)
-    - [Epic](#epic)
-    - [User Stories](#user-stories)
-        - [Implemented User Stories](#implemented-user-stories)
-        - [Not implemented User Stories](#not-implemented-user-stories)
+    - [Epics & User Stories](#epics--user-stories)
+    - [Implemented User Stories](#implemented-user-stories)
+    - [Not implemented User Stories](#not-implemented-user-stories)
     - [MoSCoW Prioritization](#moscow-prioritization)
     - [Kanban Board](#kanban-board)
     - [UML Diagram](#uml-diagram)
@@ -74,15 +73,66 @@ The app communicates through clear buttons, minimal choices, simple text, and sh
 - Reduced cognitive load through simple layouts
 
 ## Agile Planning
-### Epic
-### User Stories
+The development of Sheriff’s Word Hunt was planned using Agile methodology. All functionality was divided into Epics and refined into User Stories, each assigned a MoSCoW priority.
+
+### Epics & User Stories
+
+#### [**EPIC 1: Core Gameplay**](https://github.com/Linnea87/sheriffs-word-hunt/issues/1)
+Focuses on the fundamental mission flow, puzzle interaction, and feedback loops.  
+
+*User Stories under this Epic:*
+- [US 1: Start a mission](https://github.com/Linnea87/sheriffs-word-hunt/issues/2) 
+- [US 2: See the word puzzle clearly](https://github.com/Linnea87/sheriffs-word-hunt/issues/3) 
+- [US 3: Choose between answer cards](https://github.com/Linnea87/sheriffs-word-hunt/issues/4)
+- [US 4: Immediate feedback](https://github.com/Linnea87/sheriffs-word-hunt/issues/5)
+- [US 5: Maintainable game logic (Repository Pattern)](https://github.com/Linnea87/sheriffs-word-hunt/issues/6)
+
+
+#### [**EPIC 2: Navigation & Structure**](https://github.com/Linnea87/sheriffs-word-hunt/issues/7)
+Ensures intuitive movement between screens and simple UI flow.  
+
+*User Stories under this Epic:*
+- [US 6: Navigate from home screen](https://github.com/Linnea87/sheriffs-word-hunt/issues/8)
+- [US 7: Open Sheriff’s Orders](https://github.com/Linnea87/sheriffs-word-hunt/issues/9)
+- [US 8: Open Case Files](https://github.com/Linnea87/sheriffs-word-hunt/issues/10)
+- [US 9: Smooth back navigation](https://github.com/Linnea87/sheriffs-word-hunt/issues/11)
+- [US 10: Reusable fragment structure](https://github.com/Linnea87/sheriffs-word-hunt/issues/12)
+
+#### [**EPIC 3: Visual Design & Accessibility**](https://github.com/Linnea87/sheriffs-word-hunt/issues/13)
+Covers colour palette, typography, and minimizing cognitive load.
+
+*User Stories under this Epic:*
+- [US 11: Readable typography and contrast](https://github.com/Linnea87/sheriffs-word-hunt/issues/14)
+- [US 12: Low visual overload](https://github.com/Linnea87/sheriffs-word-hunt/issues/15)
+- [US 13: Consistent color palette and theme](https://github.com/Linnea87/sheriffs-word-hunt/issues/16)
+- [US 14: Friendly, non-blocking feedback wording](https://github.com/Linnea87/sheriffs-word-hunt/issues/17)
+
+#### [**EPIC 4: Progress & Saving**](https://github.com/Linnea87/sheriffs-word-hunt/issues/18)
+Supports session saving and restoring gameplay.  
+
+*User Stories under this Epic:*
+- [US 15: Save mission progress](https://github.com/Linnea87/sheriffs-word-hunt/issues/19)
+- [US 16: Load mission progress](https://github.com/Linnea87/sheriffs-word-hunt/issues/20)
+- [US 17: Unlock Case Files](https://github.com/Linnea87/sheriffs-word-hunt/issues/21)
+- [US 18: Store settings/preferences](https://github.com/Linnea87/sheriffs-word-hunt/issues/22)
+
 #### Implemented User Stories
 #### Not implemented User Stories
 ### MoSCoW Prioritization
+
+| Priority | Description |
+|---------|-------------|
+| **Must Have** | Core gameplay mechanics, navigation, simple UI flow, essential feedback. |
+| **Should Have** | Accessibility improvements, aesthetic enhancements, improved readability. |
+| **Could Have** | Additional polish, animations, more puzzle variations. |
+
+
 ### Kanban Board
+The project is organized using a GitHub Project Kanban board to track progress from **To Do → In Progress → Done**.
+[View Kanban](https://github.com/users/Linnea87/projects/14)
 
 ### UML Diagram
-The UML diagram was created in [Lucidchart](https://www.lucidchart.com/) and outlines the flow between Activities, Fragments, and the Repository layer. It serves as a blueprint for the app’s architecture and game progression.
+The UML diagram was created in [**Lucidchart**](https://www.lucidchart.com/) and outlines the flow between Activities, Fragments, and the Repository layer. It serves as a blueprint for the app’s architecture and game progression.
 
 ![UML Diagram](docs/uml_diagram.png)
 
