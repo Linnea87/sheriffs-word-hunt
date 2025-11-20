@@ -137,6 +137,7 @@ Supports session saving and restoring gameplay.
 
 ### Kanban Board
 The project is organized using a GitHub Project Kanban board to track progress from **To Do → In Progress → Done**.
+
 [View Kanban](https://github.com/users/Linnea87/projects/14)
 
 ### UML Diagram
