@@ -77,8 +77,10 @@ The development of Sheriff’s Word Hunt was planned using Agile methodology. Al
 
 ### Epics & User Stories
 
-#### [**EPIC 1: Core Gameplay**](https://github.com/Linnea87/sheriffs-word-hunt/issues/1)
-Focuses on the fundamental mission flow, puzzle interaction, and feedback loops.  
+#### EPIC 1: Core Gameplay
+Focuses on the fundamental mission flow, puzzle interaction, and feedback loops.
+
+[View Epic 1](https://github.com/Linnea87/sheriffs-word-hunt/issues/1)
 
 *User Stories under this Epic:*
 - [US 1: Start a mission](https://github.com/Linnea87/sheriffs-word-hunt/issues/2) 
@@ -88,8 +90,10 @@ Focuses on the fundamental mission flow, puzzle interaction, and feedback loops.
 - [US 5: Maintainable game logic (Repository Pattern)](https://github.com/Linnea87/sheriffs-word-hunt/issues/6)
 
 
-#### [**EPIC 2: Navigation & Structure**](https://github.com/Linnea87/sheriffs-word-hunt/issues/7)
-Ensures intuitive movement between screens and simple UI flow.  
+#### [**EPIC 2: Navigation & Structure
+Ensures intuitive movement between screens and simple UI flow.
+
+[View Epic 2](https://github.com/Linnea87/sheriffs-word-hunt/issues/7)
 
 *User Stories under this Epic:*
 - [US 6: Navigate from home screen](https://github.com/Linnea87/sheriffs-word-hunt/issues/8)
@@ -98,8 +102,10 @@ Ensures intuitive movement between screens and simple UI flow.
 - [US 9: Smooth back navigation](https://github.com/Linnea87/sheriffs-word-hunt/issues/11)
 - [US 10: Reusable fragment structure](https://github.com/Linnea87/sheriffs-word-hunt/issues/12)
 
-#### [**EPIC 3: Visual Design & Accessibility**](https://github.com/Linnea87/sheriffs-word-hunt/issues/13)
+#### EPIC 3: Visual Design & Accessibility
 Covers colour palette, typography, and minimizing cognitive load.
+
+[View Epic 3](https://github.com/Linnea87/sheriffs-word-hunt/issues/13)
 
 *User Stories under this Epic:*
 - [US 11: Readable typography and contrast](https://github.com/Linnea87/sheriffs-word-hunt/issues/14)
@@ -107,8 +113,10 @@ Covers colour palette, typography, and minimizing cognitive load.
 - [US 13: Consistent color palette and theme](https://github.com/Linnea87/sheriffs-word-hunt/issues/16)
 - [US 14: Friendly, non-blocking feedback wording](https://github.com/Linnea87/sheriffs-word-hunt/issues/17)
 
-#### [**EPIC 4: Progress & Saving**](https://github.com/Linnea87/sheriffs-word-hunt/issues/18)
-Supports session saving and restoring gameplay.  
+#### EPIC 4: Progress & Saving
+Supports session saving and restoring gameplay. 
+
+[View Epic 4](https://github.com/Linnea87/sheriffs-word-hunt/issues/18)
 
 *User Stories under this Epic:*
 - [US 15: Save mission progress](https://github.com/Linnea87/sheriffs-word-hunt/issues/19)
