@@ -94,6 +94,8 @@ environment while keeping the game playful and engaging.
 ### Colour Scheme
 Sheriff’s Word Hunt uses a limited colour palette supported by textured paper elements to reinforce the Wild West atmosphere and maintain a calm, readable interface for children.
 
+The colors were sampled from the in-app designs created in [Figma](https://www.figma.com/), and the final palette layout was assembled using [Coolors](https://coolors.co/).
+
 - **Primary background / card color:** `#872606`  
 A deep Western red inspired by worn saloon signs and wanted posters, forming the main mood of the UI.
 
@@ -105,8 +107,7 @@ A light sand color used instead of pure white to reduce glare and improve readab
 
 This low-contrast, texture-driven UI supports a **more consistent and less visually overwhelming experience**, which may also benefit players who prefer predictable and calmer visual environments, including some neurodivergent users.
 
-**Color Palette**  
-The colors were sampled from the in-app designs created in [Figma](https://www.figma.com/), and the final palette layout was assembled using [Coolors](https://coolors.co/).  
+*Color Palette* 
 
 ![Color Palette](docs/color_palette.png)
 
