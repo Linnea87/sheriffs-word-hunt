@@ -90,7 +90,7 @@ Focuses on the fundamental mission flow, puzzle interaction, and feedback loops.
 - [US 5: Maintainable game logic (Repository Pattern)](https://github.com/Linnea87/sheriffs-word-hunt/issues/6)
 
 
-#### [**EPIC 2: Navigation & Structure
+#### EPIC 2: Navigation & Structure
 Ensures intuitive movement between screens and simple UI flow.
 
 [View Epic 2](https://github.com/Linnea87/sheriffs-word-hunt/issues/7)
