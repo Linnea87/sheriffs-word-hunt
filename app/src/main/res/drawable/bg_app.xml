@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <color android:color="@color/bg_primary" />
+    </item>
+
+    <item>
+        <bitmap
+                android:src="@drawable/bg_paper_texture"
+                android:alpha="0.27"
+                android:gravity="fill" />
+    </item>
+
+</layer-list>
