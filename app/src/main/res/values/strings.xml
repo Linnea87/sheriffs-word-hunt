@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SheriffsWordHunt</string>
+    <string name="hero_title">Sheriff’s Word Hunt</string>
+    <string name="hero_sub">Your language adventure begins here!</string>
 </resources>
