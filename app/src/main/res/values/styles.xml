@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ========== HERO TEXT ========== -->
+    <style name="Text_HeroTitle">
+        <item name="android:fontFamily">@font/rye_regular</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_hero_title</item>
+    </style>
+
+    <style name="Text_HeroSub">
+        <item name="android:fontFamily">@font/roboto_slab_regular</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_size_hero_sub</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>
