@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/main"
@@ -48,6 +47,42 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingTop="@dimen/spacing_xs" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/home_btn_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="@dimen/spacing_l"
+            android:paddingBottom="@dimen/spacing_l"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/hero_content_margin_top"
+            app:layout_constraintTop_toBottomOf="@id/hero_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_start_mission"
+                style="@style/Button_Primary"
+                android:text="@string/action_start_mission"
+                android:layout_marginBottom="@dimen/btn_margin_bottom" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_open_orders"
+                style="@style/Button_Primary"
+                android:text="@string/action_open_orders"
+                android:layout_marginBottom="@dimen/btn_margin_bottom" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_open_case_files"
+                style="@style/Button_Primary"
+                android:text="@string/action_open_files"
+                android:layout_marginBottom="@dimen/btn_margin_bottom"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
