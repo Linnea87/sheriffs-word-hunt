@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app"
+        tools:context=".MissionActivity">
+
+    <include
+            android:id="@+id/hero_section"
+            layout="@layout/hero_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mission screen (placeholder)"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/roboto_slab_regular"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hero_section"
+            android:layout_marginTop="72dp"
+            android:id="@+id/textView" />
+
+    <LinearLayout
+            android:id="@+id/question_card"
+            android:layout_width="300dp"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_question_card"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+        <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The cowboy ____ across the desert"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textSize="18sp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/answers_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/question_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_option1"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_question_card"
+                android:text="Rode"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_option2"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_question_card"
+                android:text="Ride"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_option3"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_question_card"
+                android:text="Riding"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
