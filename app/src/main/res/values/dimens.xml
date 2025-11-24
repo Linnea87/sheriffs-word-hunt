@@ -3,17 +3,35 @@
 
     <!-- ========== HERO ========== -->
     <dimen name="hero_height">300dp</dimen>
+    <dimen name="text_size_hero_title">32sp</dimen>
+    <dimen name="text_size_hero_sub">18sp</dimen>
 
     <!-- ========== SPACING ========== -->
-    <dimen name="spacing_xs">4dp</dimen>     <!-- liten vertikal mellan titel & sub -->
-    <dimen name="spacing_s">8dp</dimen>      <!-- vertical padding -->
-    <dimen name="spacing_m">16dp</dimen>     <!-- horizontal padding -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+    <dimen name="spacing_l">24dp</dimen>
 
     <!-- ========== CORNERS ========== -->
     <dimen name="corner_radius_s">8dp</dimen>
 
-    <!-- ========== TEXT SIZES ========== -->
-    <dimen name="text_size_hero_title">32sp</dimen>
-    <dimen name="text_size_hero_sub">18sp</dimen>
+    <!-- ========== BUTTONS ========== -->
+    <dimen name="btn_width">260dp</dimen>
+    <dimen name="btn_height">72dp</dimen>
+    <dimen name="btn_text_size">16sp</dimen>
+
+    <dimen name="btn_padding_horizontal">24dp</dimen>
+    <dimen name="btn_padding_vertical">12dp</dimen>
+    <dimen name="btn_margin_bottom">16dp</dimen>
+
+    <dimen name="btn_corner_radius">8dp</dimen>
+    <dimen name="btn_stroke_width">2dp</dimen>
+    <dimen name="btn_shadow_offset_y">2dp</dimen>
+    <dimen name="btn_icon_padding">8dp</dimen>
+
+
+    <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
+    <dimen name="hero_content_margin_top">100dp</dimen>
+
 
 </resources>

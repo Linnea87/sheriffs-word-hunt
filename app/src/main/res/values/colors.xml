@@ -6,6 +6,7 @@
     <color name="toast_bg">#C19468</color>
     <color name="text_primary">#FFEFC5</color>
     <color name="overlay_hero_text">#63220D16</color>
-
+    <color name="btn_stroke">#80361A</color>
+    <color name="btn_fill">#4D80361A</color>
 
 </resources>
