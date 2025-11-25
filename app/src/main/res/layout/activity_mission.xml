@@ -25,6 +25,7 @@
             android:fontFamily="@font/roboto_slab_regular"
             android:textSize="@dimen/text_size_hero_sub"
             android:text="Case Title"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/hero_section"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
