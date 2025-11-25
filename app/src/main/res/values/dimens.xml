@@ -29,6 +29,15 @@
     <dimen name="btn_shadow_offset_y">2dp</dimen>
     <dimen name="btn_icon_padding">8dp</dimen>
 
+    <!-- ========== MISSION LAYOUT ========== -->
+    <dimen name="mission_title_margin_top">72dp</dimen>
+
+    <dimen name="question_card_width">300dp</dimen>
+    <dimen name="question_card_height">220dp</dimen>
+    <dimen name="question_card_margin_top">30dp</dimen>
+
+    <dimen name="answer_btn_width">90dp</dimen>
+    <dimen name="answer_btn_height">60dp</dimen>
 
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>

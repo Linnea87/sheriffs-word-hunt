@@ -1,5 +1,6 @@
 package com.example.sheriffswordhunt
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sheriffswordhunt.databinding.ActivityHomeBinding
+import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -20,6 +22,11 @@ class HomeActivity : AppCompatActivity() {
 
         // Byt hero-bild för just HomeActivity
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_home)
+
+        binding.btnStartMission.setOnClickListener {
+            val intent = Intent(this, MissionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
