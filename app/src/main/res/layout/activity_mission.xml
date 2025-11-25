@@ -6,8 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app"
-        tools:context=".MissionActivity">
+        tools:context=".ui.mission.MissionActivity">
 
+    <!-- HERO SECTION -->
     <include
             android:id="@+id/hero_section"
             layout="@layout/hero_layout"
@@ -15,83 +16,88 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- PLACEHOLDER TITLE -->
     <TextView
+            android:id="@+id/tv_mission_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mission screen (placeholder)"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_hero_sub"
+            android:text="Case Title"
+            app:layout_constraintTop_toBottomOf="@id/hero_section"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hero_section"
-            android:layout_marginTop="72dp"
-            android:id="@+id/textView" />
+            android:layout_marginTop="@dimen/mission_title_margin_top" />
 
+    <!-- QUESTION CARD -->
     <LinearLayout
             android:id="@+id/question_card"
-            android:layout_width="300dp"
-            android:layout_height="220dp"
+            android:layout_width="@dimen/question_card_width"
+            android:layout_height="@dimen/question_card_height"
             android:background="@drawable/bg_question_card"
             android:orientation="vertical"
             android:gravity="center_vertical"
-            app:layout_constraintTop_toBottomOf="@id/textView"
+            android:paddingStart="@dimen/spacing_l"
+            android:paddingEnd="@dimen/spacing_l"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp">
+            android:layout_marginTop="@dimen/question_card_margin_top">
 
         <TextView
                 android:id="@+id/tv_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The cowboy ____ across the desert"
+                android:text="Question placeholder"
                 android:textColor="@color/text_primary"
                 android:fontFamily="@font/roboto_slab_regular"
-                android:textSize="18sp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:textSize="@dimen/text_size_hero_sub"
+                android:paddingTop="@dimen/spacing_s"
+                android:paddingBottom="@dimen/spacing_s" />
     </LinearLayout>
+
+    <!-- ANSWER BUTTONS -->
     <LinearLayout
             android:id="@+id/answers_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_m"
             app:layout_constraintTop_toBottomOf="@id/question_card"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_option1"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/answer_btn_width"
+                android:layout_height="@dimen/answer_btn_height"
                 android:background="@drawable/bg_question_card"
-                android:text="Rode"
+                android:text="Option 1"
                 android:textAllCaps="false"
-                android:textColor="@color/text_primary"/>
+                android:textColor="@color/text_primary" />
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_option2"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/answer_btn_width"
+                android:layout_height="@dimen/answer_btn_height"
                 android:background="@drawable/bg_question_card"
-                android:text="Ride"
+                android:text="Option 2"
                 android:textAllCaps="false"
                 android:textColor="@color/text_primary"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginStart="@dimen/spacing_s"
+                android:layout_marginEnd="@dimen/spacing_s" />
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_option3"
-                android:layout_width="90dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/answer_btn_width"
+                android:layout_height="@dimen/answer_btn_height"
                 android:background="@drawable/bg_question_card"
-                android:text="Riding"
+                android:text="Option 3"
                 android:textAllCaps="false"
-                android:textColor="@color/text_primary"/>
+                android:textColor="@color/text_primary" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

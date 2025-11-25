@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sheriffswordhunt.databinding.ActivityHomeBinding
+import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
 class HomeActivity : AppCompatActivity() {
 
