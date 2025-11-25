@@ -1,8 +1,28 @@
 package com.example.sheriffswordhunt.data.repository
 
+import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
 
 class MissionRepositoryImpl : MissionRepository {
+
+    private val cases = listOf(
+        MissionCase(
+            id = 1,
+            title = "The Lost Verbs",
+            subtitle = "Outlaw Clay McCoy stole our action words. Restore each missing verb."
+        ),
+        MissionCase(
+            id = 2,
+            title = "The Broken Sentence",
+            subtitle = "Bandit Lila Graves shattered our sentences. Choose the correct linking words."
+        ),
+        MissionCase(
+            id = 3,
+            title = "The Vanishing Nouns",
+            subtitle = "Outlaw Jasper “Dust” Kane hid all the nouns around town. Recover each missing object."
+        )
+    )
+
     private val questions = listOf(
         // Case 1 – The Lost Verbs
         MissionQuestion(
@@ -171,6 +191,13 @@ class MissionRepositoryImpl : MissionRepository {
         )
 
     )
+
+    override fun getCases(): List<MissionCase> = cases
+
+    override fun getCaseById(id: Int): MissionCase? {
+        return cases.firstOrNull { it.id == id }
+    }
+
 
     override fun getQuestionsForCase(caseId: Int): List<MissionQuestion> {
        return questions.filter { it.caseId == caseId }
