@@ -47,6 +47,15 @@
     <dimen name="toast_min_width">180dp</dimen>
     <dimen name="toast_text_size">18sp</dimen>
 
+    <!-- ========== CASE FILES ========== -->
+    <dimen name="paper_width">300dp</dimen>
+    <dimen name="paper_height">400dp</dimen>
+    <dimen name="margin_xxl">76dp</dimen>
+    <dimen name="spacing_ml">20dp</dimen>
+    <dimen name="text_size_subtitle">20sp</dimen>
+    <dimen name="paper_text_width">201dp</dimen>
+    <dimen name="paper_text_height">163dp</dimen>
+
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>
 

@@ -14,4 +14,12 @@
     <string name="toast_case_unlocked">Next case unlocked!</string>
     <string name="toast_bandit_captured">Bandit captured! All words restored.</string>
 
+    <!-- ========== CASE FILES ========== -->
+    <string name="case_files_paper_desc">Background paper texture for case files</string>
+    <string name="case_files_title">Case files</string>
+    <string name="case_files_subtitle">These records contain crimes against language itself.
+Guard them well,
+ Deputy.</string>
+
+
 </resources>

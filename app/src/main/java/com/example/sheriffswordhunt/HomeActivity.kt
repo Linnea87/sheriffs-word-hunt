@@ -20,7 +20,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Byt hero-bild för just HomeActivity
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_home)
 
         binding.btnStartMission.setOnClickListener {
