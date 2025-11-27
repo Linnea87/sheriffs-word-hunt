@@ -39,6 +39,14 @@
     <dimen name="answer_btn_width">90dp</dimen>
     <dimen name="answer_btn_height">60dp</dimen>
 
+    <!-- ========== TOAST ========== -->
+    <dimen name="toast_corner_radius">12dp</dimen>
+    <dimen name="toast_padding_horizontal">16dp</dimen>
+    <dimen name="toast_padding_vertical">12dp</dimen>
+    <dimen name="toast_offset_y">200dp</dimen>
+    <dimen name="toast_min_width">180dp</dimen>
+    <dimen name="toast_text_size">18sp</dimen>
+
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>
 
