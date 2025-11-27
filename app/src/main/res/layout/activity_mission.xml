@@ -25,10 +25,26 @@
             android:fontFamily="@font/roboto_slab_regular"
             android:textSize="@dimen/text_size_hero_sub"
             android:text="Case Title"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/hero_section"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/mission_title_margin_top" />
+
+    <TextView
+            android:id="@+id/tv_mission_subtitle"
+            android:layout_width="@dimen/question_card_width"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/roboto_slab_light"
+            android:textSize="@dimen/btn_text_size"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:paddingStart="@dimen/spacing_m"
+            android:paddingEnd="@dimen/spacing_m"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- QUESTION CARD -->
     <LinearLayout
@@ -40,7 +56,7 @@
             android:gravity="center_vertical"
             android:paddingStart="@dimen/spacing_l"
             android:paddingEnd="@dimen/spacing_l"
-            app:layout_constraintTop_toBottomOf="@id/tv_mission_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_mission_subtitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/question_card_margin_top">

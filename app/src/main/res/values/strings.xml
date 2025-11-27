@@ -2,7 +2,6 @@
     <string name="app_name">SheriffsWordHunt</string>
 
     <!-- ========== HERO SECTION ========== -->
-
     <string name="hero_title">Sheriff’s Word Hunt</string>
     <string name="hero_sub">Your language adventure begins here!</string>
 
@@ -10,5 +9,9 @@
     <string name="action_start_mission">Start mission</string>
     <string name="action_open_orders">Sheriff´s orders</string>
     <string name="action_open_files">Case files</string>
+
+    <!-- ========== TOAST ========== -->
+    <string name="toast_case_unlocked">Next case unlocked!</string>
+    <string name="toast_bandit_captured">Bandit captured! All words restored.</string>
 
 </resources>
