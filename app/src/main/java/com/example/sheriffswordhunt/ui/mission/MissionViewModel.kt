@@ -84,10 +84,22 @@ class MissionViewModel(
             val isLastQuestion = currentIndex == questions.lastIndex
             if (!isLastQuestion) {
                 showNextQuestion()
-            }
+
+                gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
+            } else {
+
+            gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
+        }
 
         } else {
             _answerFeedback.value = question.feedbackIncorrect
+        }
+    }
+
+    fun loadSavedProgress(savedIndex: Int) {
+        if (savedIndex in questions.indices) {
+            currentIndex = savedIndex
+            _currentQuestion.value = questions[currentIndex]
         }
     }
 }

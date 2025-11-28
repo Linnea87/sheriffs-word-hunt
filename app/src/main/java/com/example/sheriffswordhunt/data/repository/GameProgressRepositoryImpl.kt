@@ -23,4 +23,16 @@ class GameProgressRepositoryImpl (
             .putBoolean(KEY_UNLOCK_PREFIX + caseId, true)
             .apply()
     }
+
+    override fun saveCurrentQuestion(caseId: Int, questionIndex: Int) {
+        prefs.edit()
+            .putInt("case_${caseId}_current_question", questionIndex)
+            .apply()
+    }
+
+    override fun getSavedQuestion(caseId: Int): Int {
+        return prefs.getInt("case_${caseId}_current_question", 0)
+    }
+
+
 }

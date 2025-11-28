@@ -83,6 +83,10 @@ class MissionActivity : AppCompatActivity() {
 
         val caseId = intent.getIntExtra(EXTRA_CASE_ID, 1)
         viewModel.loadCase(caseId)
+
+        val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
+        viewModel.loadSavedProgress(savedIndex)
+
     }
 
     private fun showCustomToast(message: String) {
