@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sheriffswordhunt.R
+import com.example.sheriffswordhunt.data.repository.GameProgressRepository
+import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
@@ -14,11 +16,18 @@ import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 class MissionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMissionBinding
-    private val repository: MissionRepository = MissionRepositoryImpl()
-    private val currentCaseId: Int = 1
+    private val missionRepository: MissionRepository = MissionRepositoryImpl()
+    private val gameProgressRepository: GameProgressRepository by lazy {
+        val prefs = getSharedPreferences("game_progress", MODE_PRIVATE)
+        GameProgressRepositoryImpl(prefs)
+    }
+
+    companion object{
+        const val EXTRA_CASE_ID = "extra_case_id"
+    }
 
     private val viewModel: MissionViewModel by viewModels {
-        MissionViewModelFactory(repository)
+        MissionViewModelFactory(missionRepository, gameProgressRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +81,12 @@ class MissionActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.loadCase(currentCaseId)
+        val caseId = intent.getIntExtra(EXTRA_CASE_ID, 1)
+        viewModel.loadCase(caseId)
+
+        val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
+        viewModel.loadSavedProgress(savedIndex)
+
     }
 
     private fun showCustomToast(message: String) {

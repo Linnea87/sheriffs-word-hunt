@@ -5,10 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
+import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 
 class MissionViewModel(
-    private val repository: MissionRepository
+    private val repository: MissionRepository,
+    private val gameProgressRepository: GameProgressRepository
 ) : ViewModel() {
     private val _currentCase = MutableLiveData<MissionCase>()
     val currentCase: LiveData<MissionCase> = _currentCase
@@ -19,6 +21,7 @@ class MissionViewModel(
     private var questions: List<MissionQuestion> = emptyList()
     private var currentIndex: Int = 0
     private var correctAnswers: Int = 0
+    private var currentCaseId: Int = 1
 
     private val _answerFeedback = MutableLiveData<String>()
     val answerFeedback: LiveData<String> = _answerFeedback
@@ -30,6 +33,8 @@ class MissionViewModel(
     val banditCaptured: LiveData<Boolean> = _banditCaptured
 
     fun loadCase(caseId: Int) {
+        currentCaseId = caseId
+
         val case = repository.getCaseById(caseId)
             ?: error("Case with id $caseId not found")
 
@@ -62,20 +67,39 @@ class MissionViewModel(
             correctAnswers++
             _answerFeedback.value = question.feedbackCorrect
 
-            val isLastQuestion = currentIndex == questions.lastIndex
+            if ((_caseUnlocked.value != true) && correctAnswers >= 3) {
+                _caseUnlocked.value = true
 
-            if (isLastQuestion) {
-                if (correctAnswers >= 3) {
-                    _caseUnlocked.value = true
+                val nextCaseId = currentCaseId + 1
+                val nextCaseExists = repository.getCaseById(nextCaseId) != null
+                if (nextCaseExists) {
+                    gameProgressRepository.unlockCase(nextCaseId)
                 }
-                if (correctAnswers == questions.size) {
-                    _banditCaptured.value = true
-                }
-            } else {
-                showNextQuestion()
             }
+
+            if ((_banditCaptured.value != true) && correctAnswers == questions.size) {
+                _banditCaptured.value = true
+            }
+
+            val isLastQuestion = currentIndex == questions.lastIndex
+            if (!isLastQuestion) {
+                showNextQuestion()
+
+                gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
+            } else {
+
+            gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
+        }
+
         } else {
             _answerFeedback.value = question.feedbackIncorrect
+        }
+    }
+
+    fun loadSavedProgress(savedIndex: Int) {
+        if (savedIndex in questions.indices) {
+            currentIndex = savedIndex
+            _currentQuestion.value = questions[currentIndex]
         }
     }
 }

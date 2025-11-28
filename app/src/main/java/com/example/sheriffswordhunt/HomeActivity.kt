@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sheriffswordhunt.databinding.ActivityHomeBinding
+import com.example.sheriffswordhunt.ui.casefiles.CaseFilesFragment
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
 class HomeActivity : AppCompatActivity() {
@@ -20,12 +21,18 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Byt hero-bild för just HomeActivity
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_home)
 
         binding.btnStartMission.setOnClickListener {
             val intent = Intent(this, MissionActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnOpenCaseFiles.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main, CaseFilesFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 
