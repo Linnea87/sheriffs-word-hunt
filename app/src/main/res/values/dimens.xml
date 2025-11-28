@@ -55,6 +55,34 @@
     <dimen name="text_size_subtitle">20sp</dimen>
     <dimen name="paper_text_width">201dp</dimen>
     <dimen name="paper_text_height">163dp</dimen>
+    <dimen name="case_star_width">24dp</dimen>
+    <dimen name="case_star_height">28dp</dimen>
+
+    <dimen name="case1_star_margin_start">52dp</dimen>
+    <dimen name="case1_star_margin_top">536dp</dimen>
+
+    <dimen name="case1_text_width">209dp</dimen>
+    <dimen name="case1_text_height">22dp</dimen>
+    <dimen name="case1_text_margin_start">88dp</dimen>
+    <dimen name="case1_text_margin_top">536dp</dimen>
+
+    <dimen name="case2_star_margin_start">52dp</dimen>
+    <dimen name="case2_star_margin_top">616dp</dimen>
+
+    <dimen name="case2_text_width">259dp</dimen>
+    <dimen name="case2_text_height">34dp</dimen>
+    <dimen name="case2_text_margin_start">88dp</dimen>
+    <dimen name="case2_text_margin_top">616dp</dimen>
+
+    <dimen name="case3_star_margin_start">52dp</dimen>
+    <dimen name="case3_star_margin_top">700dp</dimen>
+
+    <dimen name="case3_text_width">264dp</dimen>
+    <dimen name="case3_text_height">40dp</dimen>
+    <dimen name="case3_text_margin_start">88dp</dimen>
+    <dimen name="case3_text_margin_top">700dp</dimen>
+
+    <dimen name="text_size_case_list">18sp</dimen>
 
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>

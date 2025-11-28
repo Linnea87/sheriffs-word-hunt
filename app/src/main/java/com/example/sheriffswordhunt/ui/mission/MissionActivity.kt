@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sheriffswordhunt.R
+import com.example.sheriffswordhunt.data.repository.GameProgressRepository
+import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
@@ -14,11 +16,15 @@ import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 class MissionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMissionBinding
-    private val repository: MissionRepository = MissionRepositoryImpl()
+    private val missionRepository: MissionRepository = MissionRepositoryImpl()
+    private val gameProgressRepository: GameProgressRepository by lazy {
+        val prefs = getSharedPreferences("game_progress", MODE_PRIVATE)
+        GameProgressRepositoryImpl(prefs)
+    }
     private val currentCaseId: Int = 1
 
     private val viewModel: MissionViewModel by viewModels {
-        MissionViewModelFactory(repository)
+        MissionViewModelFactory(missionRepository, gameProgressRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,10 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
+import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 
 class MissionViewModel(
-    private val repository: MissionRepository
+    private val repository: MissionRepository,
+    private val gameProgressRepository: GameProgressRepository
 ) : ViewModel() {
     private val _currentCase = MutableLiveData<MissionCase>()
     val currentCase: LiveData<MissionCase> = _currentCase
@@ -62,18 +64,19 @@ class MissionViewModel(
             correctAnswers++
             _answerFeedback.value = question.feedbackCorrect
 
-            val isLastQuestion = currentIndex == questions.lastIndex
+            if ((_caseUnlocked.value != true) && correctAnswers >= 3) {
+                _caseUnlocked.value = true
+            }
 
-            if (isLastQuestion) {
-                if (correctAnswers >= 3) {
-                    _caseUnlocked.value = true
-                }
-                if (correctAnswers == questions.size) {
-                    _banditCaptured.value = true
-                }
-            } else {
+            if ((_banditCaptured.value != true) && correctAnswers == questions.size) {
+                _banditCaptured.value = true
+            }
+
+            val isLastQuestion = currentIndex == questions.lastIndex
+            if (!isLastQuestion) {
                 showNextQuestion()
             }
+
         } else {
             _answerFeedback.value = question.feedbackIncorrect
         }
