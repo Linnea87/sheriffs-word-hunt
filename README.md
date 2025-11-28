@@ -143,7 +143,7 @@ The project is organized using a GitHub Project Kanban board to track progress f
 ### UML Diagram
 The UML diagram was created in [**Lucidchart**](https://www.lucidchart.com/) and outlines the flow between Activities, Fragments, and the Repository layer. It serves as a blueprint for the app’s architecture and game progression.
 
-![UML Diagram](docs/uml_diagram.png)
+![UML Diagram](docs/uml_diagram_v2.png)
 
 ## Design
 The design of Sheriff’s Word Hunt focuses on creating a calm, readable, and thematic visual experience. 
