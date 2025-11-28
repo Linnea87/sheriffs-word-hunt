@@ -21,7 +21,10 @@ class MissionActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("game_progress", MODE_PRIVATE)
         GameProgressRepositoryImpl(prefs)
     }
-    private val currentCaseId: Int = 1
+
+    companion object{
+        const val EXTRA_CASE_ID = "extra_case_id"
+    }
 
     private val viewModel: MissionViewModel by viewModels {
         MissionViewModelFactory(missionRepository, gameProgressRepository)
@@ -78,7 +81,8 @@ class MissionActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.loadCase(currentCaseId)
+        val caseId = intent.getIntExtra(EXTRA_CASE_ID, 1)
+        viewModel.loadCase(caseId)
     }
 
     private fun showCustomToast(message: String) {

@@ -21,6 +21,7 @@ class MissionViewModel(
     private var questions: List<MissionQuestion> = emptyList()
     private var currentIndex: Int = 0
     private var correctAnswers: Int = 0
+    private var currentCaseId: Int = 1
 
     private val _answerFeedback = MutableLiveData<String>()
     val answerFeedback: LiveData<String> = _answerFeedback
@@ -32,6 +33,8 @@ class MissionViewModel(
     val banditCaptured: LiveData<Boolean> = _banditCaptured
 
     fun loadCase(caseId: Int) {
+        currentCaseId = caseId
+
         val case = repository.getCaseById(caseId)
             ?: error("Case with id $caseId not found")
 
@@ -66,6 +69,12 @@ class MissionViewModel(
 
             if ((_caseUnlocked.value != true) && correctAnswers >= 3) {
                 _caseUnlocked.value = true
+
+                val nextCaseId = currentCaseId + 1
+                val nextCaseExists = repository.getCaseById(nextCaseId) != null
+                if (nextCaseExists) {
+                    gameProgressRepository.unlockCase(nextCaseId)
+                }
             }
 
             if ((_banditCaptured.value != true) && correctAnswers == questions.size) {
