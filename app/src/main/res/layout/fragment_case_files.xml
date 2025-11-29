@@ -10,7 +10,7 @@
 
 
     <ImageView
-            android:id="@+id/img_Case_Paper"
+            android:id="@+id/img_case_paper"
             android:layout_width="@dimen/paper_width"
             android:layout_height="@dimen/paper_height"
             android:src="@drawable/paper_inner"
@@ -33,9 +33,9 @@
             android:fontFamily="@font/roboto_slab_regular"
             android:textStyle="bold"
             android:textSize="@dimen/text_size_hero_title"
-            app:layout_constraintTop_toTopOf="@id/img_Case_Paper"
-            app:layout_constraintStart_toStartOf="@id/img_Case_Paper"
-            app:layout_constraintEnd_toEndOf="@id/img_Case_Paper"
+            app:layout_constraintTop_toTopOf="@id/img_case_paper"
+            app:layout_constraintStart_toStartOf="@id/img_case_paper"
+            app:layout_constraintEnd_toEndOf="@id/img_case_paper"
             android:layout_marginTop="@dimen/margin_xxl" />
 
     <TextView
