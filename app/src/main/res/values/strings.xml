@@ -23,5 +23,18 @@
     <string name="case3_list_title">Case 3 – The Vanishing Nouns</string>
     <string name="cd_case_star">Case item bullet star</string>
 
+    <!-- ========== SHERIFF'S ORDERS ========== -->
+    <string name="sheriffs_order_title">Sheriff´s orders</string>
+    <string name="sheriffs_orders_subtitle">Three bandits have scattered stolen words across the frontier. Solve their puzzles and bring every last one to justice.</string>
+    <string name="rule1_list_title">A sentence is shown</string>
+    <string name="rule2_list_title">One word is missing</string>
+    <string name="rule3_list_title">Choose the correct card</string>
+    <string name="rule4_list_title">Solve 3 cases to unlock new files</string>
+    <string name="rule5_list_title">Solve 6 cases to catch a bandit</string>
+    <string name="sheriffs_orders_poster_desc">Wanted poster showing the three bandits</string>
+    <string name="sheriffs_orders_how_to_play">How to play:</string>
+    <string name="sheriffs_orders_back_to_town">Back to town</string>
+    <string name="sheriffs_orders_star_desc">Decorative sheriff star bullet</string>
+
 
 </resources>
