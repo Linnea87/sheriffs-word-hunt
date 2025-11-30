@@ -84,6 +84,42 @@
 
     <dimen name="text_size_case_list">18sp</dimen>
 
+    <!-- ========== SHERIFF'S ORDERS ========== -->
+    <dimen name="orders_title_margin_bottom">16dp</dimen>
+
+    <dimen name="orders_wanted_width">270dp</dimen>
+    <dimen name="orders_wanted_height">352dp</dimen>
+    <dimen name="orders_wanted_margin_end">64dp</dimen>
+
+    <dimen name="orders_subtitle_width">315dp</dimen>
+    <dimen name="orders_subtitle_height">120dp</dimen>
+    <dimen name="orders_subtitle_margin_start">48dp</dimen>
+    <dimen name="orders_subtitle_margin_top">8dp</dimen>
+
+    <dimen name="orders_how_to_text_size">20sp</dimen>
+    <dimen name="orders_how_to_margin_top">8dp</dimen>
+
+    <dimen name="orders_rule_star_width">20dp</dimen>
+    <dimen name="orders_rule_star_height">23dp</dimen>
+
+    <dimen name="orders_rule_text_size">16sp</dimen>
+    <dimen name="orders_rule1_margin_top">16dp</dimen>
+    <dimen name="orders_rule1_margin_start">88dp</dimen>
+
+    <dimen name="orders_rule_vertical_spacing">12dp</dimen>
+    <dimen name="orders_rule3_star_margin_start">48dp</dimen>
+
+    <dimen name="orders_rule4_width">264dp</dimen>
+    <dimen name="orders_rule4_height">22dp</dimen>
+
+    <dimen name="orders_rule5_width">281dp</dimen>
+    <dimen name="orders_rule5_height">28dp</dimen>
+
+    <dimen name="orders_back_btn_width">157dp</dimen>
+    <dimen name="orders_back_btn_height">53dp</dimen>
+    <dimen name="orders_back_btn_text_size">12sp</dimen>
+    <dimen name="orders_back_btn_margin_bottom">28dp</dimen>
+
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>
 

@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.sheriffswordhunt.databinding.ActivityHomeBinding
 import com.example.sheriffswordhunt.ui.casefiles.CaseFilesFragment
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
+import com.example.sheriffswordhunt.ui.orders.SheriffsOrdersFragment
 
 class HomeActivity : AppCompatActivity() {
 
@@ -31,6 +32,13 @@ class HomeActivity : AppCompatActivity() {
         binding.btnOpenCaseFiles.setOnClickListener {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main, CaseFilesFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        binding.btnOpenOrders.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main, SheriffsOrdersFragment())
                 .addToBackStack(null)
                 .commit()
         }
