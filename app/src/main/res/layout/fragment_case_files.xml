@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_full">
 
-
+    <!-- Papper -->
     <ImageView
             android:id="@+id/img_case_paper"
             android:layout_width="@dimen/paper_width"
@@ -21,39 +21,44 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintVertical_bias="0.169" />
+            app:layout_constraintVertical_bias="0.182" />
 
-    <TextView
-            android:id="@+id/tv_case_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/case_files_title"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/roboto_slab_regular"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_hero_title"
+    <!-- Header med transparent bakgrund -->
+    <LinearLayout
+            android:id="@+id/case_header_container"
+            android:orientation="vertical"
+            android:background="@drawable/bg_hero_text"
+            android:padding="@dimen/case_header_padding"
+            android:layout_width="@dimen/case_header_width"
+            android:layout_height="@dimen/case_header_height"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="@id/img_case_paper"
             app:layout_constraintStart_toStartOf="@id/img_case_paper"
             app:layout_constraintEnd_toEndOf="@id/img_case_paper"
-            android:layout_marginTop="@dimen/margin_xxl" />
+            android:layout_marginTop="@dimen/case_header_margin_top">
 
-    <TextView
-            android:id="@+id/tv_case_subtitle"
-            android:layout_width="@dimen/paper_text_width"
-            android:layout_height="@dimen/paper_text_height"
-            android:text="@string/case_files_subtitle"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/roboto_slab_light"
-            android:textSize="@dimen/text_size_subtitle"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/tv_case_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/spacing_s"
-            android:layout_marginStart="@dimen/spacing_l"
-            android:layout_marginEnd="@dimen/spacing_l" />
+        <TextView
+                android:id="@+id/tv_case_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/case_files_title"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textSize="@dimen/text_size_hero_title"
+                android:textStyle="bold"
+                android:gravity="center" />
 
+        <TextView
+                android:id="@+id/tv_case_subtitle"
+                android:layout_width="@dimen/case_subtitle_width"
+                android:layout_height="wrap_content"
+                android:text="@string/case_files_subtitle"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/roboto_slab_light"
+                android:textSize="@dimen/text_size_subtitle"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/case_subtitle_margin_top" />
+    </LinearLayout>
 
     <!-- CASE 1 STAR -->
     <ImageView
@@ -133,5 +138,17 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="@dimen/case3_text_margin_top" />
 
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back"
+            style="@style/Button_Primary"
+            android:text="@string/sheriffs_orders_back_to_town"
+            android:textSize="@dimen/orders_back_btn_text_size"
+            android:layout_height="@dimen/orders_back_btn_height"
+            android:layout_width="@dimen/orders_back_btn_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/orders_back_btn_margin_bottom"
+            app:layout_constraintHorizontal_bias="0.497" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
