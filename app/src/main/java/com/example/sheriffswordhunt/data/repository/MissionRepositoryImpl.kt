@@ -3,7 +3,14 @@ package com.example.sheriffswordhunt.data.repository
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
 
+// ========== REPOSITORY: MISSION DATA PROVIDER ==========
+// Supplies case and question data for the game.
+// Currently uses hardcoded content, but can later be replaced
+// with a server or database source.
+
 class MissionRepositoryImpl : MissionRepository {
+
+    // ========== CASE DEFINITIONS ==========
 
     private val cases = listOf(
         MissionCase(
@@ -23,8 +30,11 @@ class MissionRepositoryImpl : MissionRepository {
         )
     )
 
+    // ========== QUESTIONS ==========
+
     private val questions = listOf(
-        // Case 1 – The Lost Verbs
+
+        // ----- Case 1: The Lost Verbs -----
         MissionQuestion(
             id = 1,
             caseId = 1,
@@ -79,7 +89,8 @@ class MissionRepositoryImpl : MissionRepository {
             feedbackCorrect = "⭐ Correct, deputy.\nThe word was recovered!",
             feedbackIncorrect = "❌ Not quite, deputy.\nTry again!"
         ),
-        // Case 2 – The Broken Sentence
+
+        // ----- Case 2: The Broken Sentence -----
         MissionQuestion(
             id = 7,
             caseId = 2,
@@ -134,7 +145,8 @@ class MissionRepositoryImpl : MissionRepository {
             feedbackCorrect = "⭐ Correct, deputy.\nThe word was recovered!",
             feedbackIncorrect = "❌ Not quite, deputy.\nTry again!"
         ),
-        // Case 3 – The Vanishing Nouns
+
+        // ----- Case 3: The Vanishing Nouns -----
         MissionQuestion(
             id = 13,
             caseId = 3,
@@ -189,17 +201,15 @@ class MissionRepositoryImpl : MissionRepository {
             feedbackCorrect = "⭐ Correct, deputy.\nThe word was recovered!",
             feedbackIncorrect = "❌ Not quite, deputy.\nTry again!"
         )
-
     )
+
+    // ========== PUBLIC ACCESS ==========
 
     override fun getCases(): List<MissionCase> = cases
 
-    override fun getCaseById(id: Int): MissionCase? {
-        return cases.firstOrNull { it.id == id }
-    }
+    override fun getCaseById(id: Int): MissionCase? =
+        cases.firstOrNull { it.id == id }
 
-
-    override fun getQuestionsForCase(caseId: Int): List<MissionQuestion> {
-       return questions.filter { it.caseId == caseId }
-    }
+    override fun getQuestionsForCase(caseId: Int): List<MissionQuestion> =
+        questions.filter { it.caseId == caseId }
 }

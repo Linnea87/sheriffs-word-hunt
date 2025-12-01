@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== LAYOUT: Sheriff's Orders ==========
+     Shows the intro story, rules and back to town button.
+-->
+
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,7 +11,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_full">
 
-    <!-- Titel: Sheriff's orders -->
+    <!-- ========== TITLE ========== -->
+
     <TextView
             android:id="@+id/tv_orders_title"
             android:layout_width="wrap_content"
@@ -21,7 +27,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp" />
 
-    <!-- Wanted-poster -->
+
+    <!-- ========== WANTED POSTER ========== -->
+
     <ImageView
             android:id="@+id/img_wanted"
             android:layout_width="@dimen/orders_wanted_width"
@@ -36,7 +44,9 @@
             android:layout_marginEnd="@dimen/orders_wanted_margin_horizontal"
             android:layout_marginTop="@dimen/orders_title_margin_bottom" />
 
-    <!-- Brödtext under postern -->
+
+    <!-- ========== SUBTITLE TEXT ========== -->
+
     <TextView
             android:id="@+id/tv_orders_subtitle"
             android:layout_width="@dimen/orders_subtitle_width"
@@ -53,7 +63,9 @@
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal"
             android:layout_marginTop="@dimen/orders_subtitle_margin_top" />
 
-    <!-- "How to play:" -->
+
+    <!-- ========== HOW TO PLAY HEADING ========== -->
+
     <TextView
             android:id="@+id/tv_how_to_play"
             android:layout_width="wrap_content"
@@ -67,7 +79,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/orders_how_to_margin_top" />
 
-    <!-- Regel 1: stjärna + text -->
+
+    <!-- ========== RULES ========== -->
+
+    <!-- Rule 1 -->
     <ImageView
             android:id="@+id/img_rule1_star"
             android:layout_width="@dimen/orders_rule_star_width"
@@ -94,7 +109,7 @@
             android:layout_marginStart="@dimen/spacing_s"
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
-    <!-- Regel 2 -->
+    <!-- Rule 2 -->
     <ImageView
             android:id="@+id/img_rule2_star"
             android:layout_width="@dimen/orders_rule_star_width"
@@ -121,7 +136,7 @@
             android:layout_marginStart="@dimen/spacing_s"
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
-    <!-- Regel 3 -->
+    <!-- Rule 3 -->
     <ImageView
             android:id="@+id/img_rule3_star"
             android:layout_width="@dimen/orders_rule_star_width"
@@ -148,7 +163,7 @@
             android:layout_marginStart="@dimen/spacing_s"
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
-    <!-- Regel 4 -->
+    <!-- Rule 4 -->
     <ImageView
             android:id="@+id/img_rule4_star"
             android:layout_width="@dimen/orders_rule_star_width"
@@ -175,7 +190,7 @@
             android:layout_marginStart="@dimen/spacing_s"
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
-    <!-- Regel 5 -->
+    <!-- Rule 5 -->
     <ImageView
             android:id="@+id/img_rule5_star"
             android:layout_width="@dimen/orders_rule_star_width"
@@ -202,7 +217,9 @@
             android:layout_marginStart="@dimen/spacing_s"
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
-    <!-- Back-knapp -->
+
+    <!-- ========== BACK BUTTON ========== -->
+
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"
             style="@style/Button_Primary_Small"

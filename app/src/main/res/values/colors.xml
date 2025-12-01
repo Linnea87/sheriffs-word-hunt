@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== COLORS: App Theme Palette ==========
+     Defines the global color scheme used throughout the UI.
+-->
+
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary background & theme colors -->
     <color name="bg_primary">#872606</color>
-    <color name="toast_bg">#C19468</color>
     <color name="text_primary">#FFEFC5</color>
+
+    <!-- Overlays & UI elements -->
     <color name="overlay_hero_text">#63220D16</color>
+    <color name="toast_bg">#C19468</color>
+
+    <!-- Button colors -->
     <color name="btn_stroke">#80361A</color>
     <color name="btn_fill">#4D80361A</color>
-
 </resources>

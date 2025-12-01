@@ -1,4 +1,9 @@
-<!-- res/drawable/bg_app.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== BACKGROUND: App Main Background ==========
+     Combines the primary dark color with a faded paper texture
+     positioned below the hero section. -->
+
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/bg_primary" />

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== DRAWABLE: Primary Button Background ==========
+     Draws the button fill color, rounded corners, stroke outline
+     and padding defined in dimens for consistent UI spacing.
+-->
+
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item>
@@ -16,10 +22,10 @@
                     android:color="@color/btn_stroke" />
             <corners android:radius="@dimen/btn_corner_radius" />
             <padding
-                    android:left="12dp"
-                    android:right="12dp"
-                    android:top="8dp"
-                    android:bottom="8dp" />
+                    android:left="@dimen/btn_bg_padding_horizontal"
+                    android:right="@dimen/btn_bg_padding_horizontal"
+                    android:top="@dimen/btn_bg_padding_vertical"
+                    android:bottom="@dimen/btn_bg_padding_vertical" />
         </shape>
     </item>
 
