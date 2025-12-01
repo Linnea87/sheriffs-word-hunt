@@ -13,6 +13,11 @@
     <string name="hero_title">Sheriff’s Word Hunt</string>
     <string name="hero_sub">Your language adventure begins here!</string>
 
+    <!-- ========== WELCOME SECTION ========== -->
+    <string name="home_welcome_title">Howdy, Deputy!</string>
+    <string name="home_welcome_subtitle">Before you ride out, the Sheriff left a briefing for you.
+        Check Sheriff’s Orders to learn what you’ll be up against.</string>
+
     <!-- ========== ACTION ========== -->
 
     <string name="action_start_mission">Start mission</string>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- ========== LAYOUT: Home Screen ==========
-     Shows hero section and navigation buttons for Missions,
-     Sheriff's Orders, and Case Files.
+     Shows hero section, welcome intro, and navigation buttons
+     for Missions, Sheriff's Orders, and Case Files.
 -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -57,6 +57,42 @@
                 android:paddingTop="@dimen/spacing_xs" />
     </LinearLayout>
 
+    <!-- ========== HOME INTRO TEXT ========== -->
+
+    <LinearLayout
+            android:id="@+id/home_intro_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/hero_content_margin_top"
+            app:layout_constraintTop_toBottomOf="@id/hero_section"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+                android:id="@+id/tv_home_welcome_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_welcome_title"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textSize="@dimen/home_welcome_title_size"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
+
+        <TextView
+                android:id="@+id/tv_home_welcome_subtitle"
+                android:layout_width="@dimen/home_intro_subtitle_width"
+                android:layout_height="wrap_content"
+                android:text="@string/home_welcome_subtitle"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/roboto_slab_light"
+                android:textSize="@dimen/home_welcome_subtitle_size"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/home_intro_title_spacing" />
+    </LinearLayout>
+
     <!-- ========== HOME BUTTONS ========== -->
 
     <LinearLayout
@@ -69,10 +105,11 @@
             android:paddingBottom="@dimen/spacing_l"
             android:layout_marginStart="@dimen/spacing_l"
             android:layout_marginEnd="@dimen/spacing_l"
-            android:layout_marginTop="@dimen/hero_content_margin_top"
-            app:layout_constraintTop_toBottomOf="@id/hero_section"
+            app:layout_constraintTop_toBottomOf="@id/home_intro_container"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/home_buttons_spacing_top"
+            app:layout_constraintHorizontal_bias="0.0">
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_start_mission"
@@ -93,5 +130,7 @@
                 android:layout_marginBottom="@dimen/btn_margin_bottom" />
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
