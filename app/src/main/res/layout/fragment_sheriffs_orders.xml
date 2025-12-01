@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_full">
 
+    <!-- Titel: Sheriff's orders -->
     <TextView
             android:id="@+id/tv_orders_title"
             android:layout_width="wrap_content"
@@ -16,13 +16,12 @@
             android:fontFamily="@font/roboto_slab_regular"
             android:textStyle="bold"
             android:textSize="@dimen/text_size_hero_title"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/img_wanted"
-            android:layout_marginBottom="@dimen/orders_title_margin_bottom"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666" />
+            android:layout_marginTop="16dp" />
 
+    <!-- Wanted-poster -->
     <ImageView
             android:id="@+id/img_wanted"
             android:layout_width="@dimen/orders_wanted_width"
@@ -30,161 +29,180 @@
             android:src="@drawable/sheriffs_orders"
             android:scaleType="centerCrop"
             android:contentDescription="@string/sheriffs_orders_poster_desc"
-            tools:layout_editor_absoluteY="74dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_orders_title"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/orders_wanted_margin_end" />
+            android:layout_marginStart="@dimen/orders_wanted_margin_horizontal"
+            android:layout_marginEnd="@dimen/orders_wanted_margin_horizontal"
+            android:layout_marginTop="@dimen/orders_title_margin_bottom" />
 
+    <!-- Brödtext under postern -->
     <TextView
             android:id="@+id/tv_orders_subtitle"
             android:layout_width="@dimen/orders_subtitle_width"
-            android:layout_height="@dimen/orders_subtitle_height"
+            android:layout_height="wrap_content"
             android:text="@string/sheriffs_orders_subtitle"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
-            android:textSize="@dimen/text_size_subtitle"
+            android:textSize="@dimen/orders_subtitle_text_size"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/img_wanted"
+            app:layout_constraintTop_toBottomOf="@id/img_wanted"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/orders_subtitle_margin_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/orders_subtitle_margin_horizontal"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal"
             android:layout_marginTop="@dimen/orders_subtitle_margin_top" />
 
+    <!-- "How to play:" -->
     <TextView
             android:id="@+id/tv_how_to_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/sheriffs_orders_how_to_play"
             android:textSize="@dimen/orders_how_to_text_size"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tv_orders_subtitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_orders_subtitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             android:layout_marginTop="@dimen/orders_how_to_margin_top" />
 
+    <!-- Regel 1: stjärna + text -->
     <ImageView
             android:id="@+id/img_rule1_star"
             android:layout_width="@dimen/orders_rule_star_width"
             android:layout_height="@dimen/orders_rule_star_height"
             android:src="@drawable/ic_star_orders"
             android:contentDescription="@string/sheriffs_orders_star_desc"
-            tools:layout_editor_absoluteY="606dp"
-            app:layout_constraintEnd_toStartOf="@+id/tv_rule1_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_how_to_play"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.808" />
+            android:layout_marginStart="@dimen/orders_rule_margin_start"
+            android:layout_marginTop="@dimen/orders_rule1_margin_top" />
 
     <TextView
             android:id="@+id/tv_rule1_title"
-            android:layout_width="@dimen/case1_text_width"
-            android:layout_height="@dimen/case1_text_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/rule1_list_title"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
             android:textSize="@dimen/orders_rule_text_size"
-            app:layout_constraintTop_toBottomOf="@+id/tv_how_to_play"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/orders_rule1_margin_top"
-            android:layout_marginStart="@dimen/orders_rule1_margin_start" />
+            app:layout_constraintTop_toTopOf="@id/img_rule1_star"
+            app:layout_constraintBottom_toBottomOf="@id/img_rule1_star"
+            app:layout_constraintStart_toEndOf="@id/img_rule1_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
+    <!-- Regel 2 -->
     <ImageView
             android:id="@+id/img_rule2_star"
             android:layout_width="@dimen/orders_rule_star_width"
             android:layout_height="@dimen/orders_rule_star_height"
             android:src="@drawable/ic_star_orders"
             android:contentDescription="@string/sheriffs_orders_star_desc"
-            tools:layout_editor_absoluteY="640dp"
-            app:layout_constraintEnd_toStartOf="@+id/tv_rule2_title"
+            app:layout_constraintTop_toBottomOf="@id/img_rule1_star"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.808" />
+            android:layout_marginStart="@dimen/orders_rule_margin_start"
+            android:layout_marginTop="@dimen/orders_rule_vertical_spacing" />
 
     <TextView
             android:id="@+id/tv_rule2_title"
-            android:layout_width="@dimen/case1_text_width"
-            android:layout_height="@dimen/case1_text_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/rule2_list_title"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
             android:textSize="@dimen/orders_rule_text_size"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rule1_title"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_rule2_star"
+            app:layout_constraintBottom_toBottomOf="@id/img_rule2_star"
+            app:layout_constraintStart_toEndOf="@id/img_rule2_star"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.435"
-            android:layout_marginTop="@dimen/orders_rule_vertical_spacing" />
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
+    <!-- Regel 3 -->
     <ImageView
             android:id="@+id/img_rule3_star"
             android:layout_width="@dimen/orders_rule_star_width"
             android:layout_height="@dimen/orders_rule_star_height"
             android:src="@drawable/ic_star_orders"
             android:contentDescription="@string/sheriffs_orders_star_desc"
-            tools:layout_editor_absoluteY="675dp"
+            app:layout_constraintTop_toBottomOf="@id/img_rule2_star"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/orders_rule3_star_margin_start"
-            app:layout_constraintEnd_toStartOf="@+id/tv_rule3_title"
-            app:layout_constraintHorizontal_bias="0.35" />
+            android:layout_marginStart="@dimen/orders_rule_margin_start"
+            android:layout_marginTop="@dimen/orders_rule_vertical_spacing" />
 
     <TextView
             android:id="@+id/tv_rule3_title"
-            android:layout_width="@dimen/case1_text_width"
-            android:layout_height="@dimen/case1_text_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/rule3_list_title"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
             android:textSize="@dimen/orders_rule_text_size"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rule2_title"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_rule3_star"
+            app:layout_constraintBottom_toBottomOf="@id/img_rule3_star"
+            app:layout_constraintStart_toEndOf="@id/img_rule3_star"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/orders_rule_vertical_spacing"
-            app:layout_constraintHorizontal_bias="0.435" />
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
+    <!-- Regel 4 -->
     <ImageView
             android:id="@+id/img_rule4_star"
             android:layout_width="@dimen/orders_rule_star_width"
             android:layout_height="@dimen/orders_rule_star_height"
             android:src="@drawable/ic_star_orders"
             android:contentDescription="@string/sheriffs_orders_star_desc"
-            tools:layout_editor_absoluteY="709dp"
+            app:layout_constraintTop_toBottomOf="@id/img_rule3_star"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tv_rule4_title"
-            app:layout_constraintHorizontal_bias="0.808" />
+            android:layout_marginStart="@dimen/orders_rule_margin_start"
+            android:layout_marginTop="@dimen/orders_rule_vertical_spacing" />
 
     <TextView
             android:id="@+id/tv_rule4_title"
-            android:layout_width="@dimen/orders_rule4_width"
-            android:layout_height="@dimen/orders_rule4_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/rule4_list_title"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
             android:textSize="@dimen/orders_rule_text_size"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rule3_title"
-            android:layout_marginTop="@dimen/orders_rule_vertical_spacing"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_rule4_star"
+            app:layout_constraintBottom_toBottomOf="@id/img_rule4_star"
+            app:layout_constraintStart_toEndOf="@id/img_rule4_star"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.598" />
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
+    <!-- Regel 5 -->
     <ImageView
             android:id="@+id/img_rule5_star"
             android:layout_width="@dimen/orders_rule_star_width"
             android:layout_height="@dimen/orders_rule_star_height"
             android:src="@drawable/ic_star_orders"
             android:contentDescription="@string/sheriffs_orders_star_desc"
-            tools:layout_editor_absoluteY="743dp"
-            tools:layout_editor_absoluteX="55dp" />
+            app:layout_constraintTop_toBottomOf="@id/img_rule4_star"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/orders_rule_margin_start"
+            android:layout_marginTop="@dimen/orders_rule_vertical_spacing" />
 
     <TextView
             android:id="@+id/tv_rule5_title"
-            android:layout_width="@dimen/orders_rule5_width"
-            android:layout_height="@dimen/orders_rule5_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/rule5_list_title"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_light"
             android:textSize="@dimen/orders_rule_text_size"
-            app:layout_constraintTop_toBottomOf="@+id/tv_rule4_title"
-            android:layout_marginTop="@dimen/orders_rule_vertical_spacing"
+            app:layout_constraintTop_toTopOf="@id/img_rule5_star"
+            app:layout_constraintBottom_toBottomOf="@id/img_rule5_star"
+            app:layout_constraintStart_toEndOf="@id/img_rule5_star"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.676" />
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
+    <!-- Back-knapp -->
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"
             style="@style/Button_Primary"
