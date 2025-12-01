@@ -36,6 +36,10 @@ class CaseFilesFragment : Fragment() {
         val prefs = requireContext()
             .getSharedPreferences("game_progress", Context.MODE_PRIVATE)
 
+        binding.btnBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
         gameProgressRepository = GameProgressRepositoryImpl(prefs)
 
         binding.tvCase1Title.setOnClickListener {

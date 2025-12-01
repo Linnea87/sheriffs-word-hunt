@@ -118,14 +118,11 @@
     <!-- BACK TO TOWN BUTTON -->
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"
-            style="@style/Button_Primary"
+            style="@style/Button_Primary_Small"
             android:text="@string/sheriffs_orders_back_to_town"
-            android:textSize="@dimen/orders_back_btn_text_size"
-            android:layout_height="@dimen/orders_back_btn_height"
-            android:layout_width="@dimen/orders_back_btn_width"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="@dimen/orders_back_btn_margin_bottom" />
+            android:layout_marginBottom="@dimen/back_btn_margin_bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

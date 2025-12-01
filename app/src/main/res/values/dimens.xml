@@ -29,6 +29,12 @@
     <dimen name="btn_shadow_offset_y">2dp</dimen>
     <dimen name="btn_icon_padding">8dp</dimen>
 
+    <!-- ========== BACK BUTTON ========== -->
+    <dimen name="back_btn_width">156dp</dimen>
+    <dimen name="back_btn_height">56dp</dimen>
+    <dimen name="back_btn_text_size">12sp</dimen>
+    <dimen name="back_btn_margin_bottom">16dp</dimen>
+
     <!-- ========== MISSION LAYOUT ========== -->
     <dimen name="mission_title_margin_top">52dp</dimen>
 
@@ -130,11 +136,6 @@
     <dimen name="orders_rule1_margin_top">12dp</dimen>
     <dimen name="orders_rule_vertical_spacing">8dp</dimen>
     <dimen name="orders_rule_extra_spacing">4dp</dimen>
-
-    <dimen name="orders_back_btn_width">156dp</dimen>
-    <dimen name="orders_back_btn_height">56dp</dimen>
-    <dimen name="orders_back_btn_text_size">12sp</dimen>
-    <dimen name="orders_back_btn_margin_bottom">16dp</dimen>
 
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
     <dimen name="hero_content_margin_top">100dp</dimen>
