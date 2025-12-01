@@ -12,6 +12,13 @@
     <dimen name="text_size_hero_title">28sp</dimen>
     <dimen name="text_size_hero_sub">16sp</dimen>
 
+    <!-- ========== WELCOME ========== -->
+
+    <dimen name="home_welcome_title_size">18sp</dimen>
+    <dimen name="home_welcome_subtitle_size">15sp</dimen>
+    <dimen name="home_intro_title_spacing">12dp</dimen>
+    <dimen name="home_intro_subtitle_width">295dp</dimen>
+
     <!-- ========== SPACING ========== -->
 
     <dimen name="spacing_xs">4dp</dimen>
@@ -42,6 +49,8 @@
 
     <dimen name="btn_shadow_offset_y">2dp</dimen>
     <dimen name="btn_icon_padding">8dp</dimen>
+
+    <dimen name="home_buttons_spacing_top">24dp</dimen>
 
     <!-- ========== BACK BUTTON ========== -->
 
@@ -154,6 +163,6 @@
 
     <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
 
-    <dimen name="hero_content_margin_top">100dp</dimen>
+    <dimen name="hero_content_margin_top">56dp</dimen>
 
 </resources>
