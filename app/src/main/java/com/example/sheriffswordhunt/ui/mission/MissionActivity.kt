@@ -63,6 +63,11 @@ class MissionActivity : AppCompatActivity() {
             val answer = binding.btnOption3.text.toString()
             viewModel.submitAnswer(answer)
         }
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
          viewModel.answerFeedback.observe(this) { message ->
              showCustomToast(message)
          }
