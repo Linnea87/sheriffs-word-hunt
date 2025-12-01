@@ -8,7 +8,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_full">
 
-    <!-- Papper -->
     <ImageView
             android:id="@+id/img_case_paper"
             android:layout_width="@dimen/paper_width"
@@ -23,7 +22,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0.182" />
 
-    <!-- Header med transparent bakgrund -->
+
+    <!-- CASE 1 STAR -->
     <LinearLayout
             android:id="@+id/case_header_container"
             android:orientation="vertical"
@@ -35,7 +35,8 @@
             app:layout_constraintTop_toTopOf="@id/img_case_paper"
             app:layout_constraintStart_toStartOf="@id/img_case_paper"
             app:layout_constraintEnd_toEndOf="@id/img_case_paper"
-            android:layout_marginTop="@dimen/case_header_margin_top">
+            android:layout_marginTop="@dimen/case_header_margin_top"
+            app:layout_constraintHorizontal_bias="0.454">
 
         <TextView
                 android:id="@+id/tv_case_title"
@@ -51,7 +52,7 @@
         <TextView
                 android:id="@+id/tv_case_subtitle"
                 android:layout_width="@dimen/case_subtitle_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/case_subtitle_height"
                 android:text="@string/case_files_subtitle"
                 android:textColor="@color/text_primary"
                 android:fontFamily="@font/roboto_slab_light"
@@ -60,7 +61,6 @@
                 android:layout_marginTop="@dimen/case_subtitle_margin_top" />
     </LinearLayout>
 
-    <!-- CASE 1 STAR -->
     <ImageView
             android:id="@+id/img_case1_star"
             android:layout_width="@dimen/case_star_width"

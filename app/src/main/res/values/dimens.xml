@@ -56,11 +56,12 @@
     <dimen name="paper_height">406dp</dimen>
 
     <!-- Header container -->
-    <dimen name="case_header_width">259dp</dimen>
-    <dimen name="case_header_height">189dp</dimen>
+    <dimen name="case_header_width">260dp</dimen>
+    <dimen name="case_header_height">201dp</dimen>
     <dimen name="case_header_margin_top">92dp</dimen>
     <dimen name="case_header_padding">8dp</dimen>
     <dimen name="case_subtitle_width">200dp</dimen>
+    <dimen name="case_subtitle_height">137dp</dimen>
     <dimen name="case_subtitle_margin_top">8dp</dimen>
 
     <!-- Spacing & titles -->
