@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== BACKGROUND: Custom Toast ==========
+     Rounded paper-style background for feedback messages.
+-->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid android:color="@color/toast_bg" />

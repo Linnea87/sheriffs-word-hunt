@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== DRAWABLE: Hero Text Overlay ==========
+     Semi-transparent rounded background used behind hero titles.
+-->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid android:color="@color/overlay_hero_text" />
 
     <corners android:radius="@dimen/corner_radius_s" />
+
 </shape>

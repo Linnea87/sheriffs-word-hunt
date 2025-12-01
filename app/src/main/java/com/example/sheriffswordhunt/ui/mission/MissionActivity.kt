@@ -12,23 +12,32 @@ import com.example.sheriffswordhunt.data.repository.MissionRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 
-
+// ========== MISSION ACTIVITY ==========
+// Handles mission gameplay: loading questions, checking answers,
+// showing feedback, and saving player progress.
 class MissionActivity : AppCompatActivity() {
+
+    // ========== BINDING & REPOSITORIES ==========
 
     private lateinit var binding: ActivityMissionBinding
     private val missionRepository: MissionRepository = MissionRepositoryImpl()
+
     private val gameProgressRepository: GameProgressRepository by lazy {
         val prefs = getSharedPreferences("game_progress", MODE_PRIVATE)
         GameProgressRepositoryImpl(prefs)
     }
 
-    companion object{
+    companion object {
         const val EXTRA_CASE_ID = "extra_case_id"
     }
+
+    // ========== VIEWMODEL ==========
 
     private val viewModel: MissionViewModel by viewModels {
         MissionViewModelFactory(missionRepository, gameProgressRepository)
     }
+
+    // ========== LIFECYCLE ==========
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,9 +46,11 @@ class MissionActivity : AppCompatActivity() {
 
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_mission)
 
-        viewModel.currentCase.observe(this) { missionCase ->
-            binding.tvMissionTitle.text = missionCase.title
-            binding.tvMissionSubtitle.text = missionCase.subtitle
+        // ========== OBSERVERS ==========
+
+        viewModel.currentCase.observe(this) { case ->
+            binding.tvMissionTitle.text = case.title
+            binding.tvMissionSubtitle.text = case.subtitle
         }
 
         viewModel.currentQuestion.observe(this) { question ->
@@ -49,54 +60,47 @@ class MissionActivity : AppCompatActivity() {
             binding.btnOption3.text = question.options[2]
         }
 
+        viewModel.answerFeedback.observe(this) { showCustomToast(it) }
+
+        viewModel.caseUnlocked.observe(this) {
+            if (it == true) showCustomToast(getString(R.string.toast_case_unlocked))
+        }
+
+        viewModel.banditCaptured.observe(this) {
+            if (it == true) showCustomToast(getString(R.string.toast_bandit_captured))
+        }
+
+        // ========== BUTTON LISTENERS ==========
+
         binding.btnOption1.setOnClickListener {
-            val answer = binding.btnOption1.text.toString()
-            viewModel.submitAnswer(answer)
+            viewModel.submitAnswer(binding.btnOption1.text.toString())
         }
 
         binding.btnOption2.setOnClickListener {
-            val answer = binding.btnOption2.text.toString()
-            viewModel.submitAnswer(answer)
+            viewModel.submitAnswer(binding.btnOption2.text.toString())
         }
 
         binding.btnOption3.setOnClickListener {
-            val answer = binding.btnOption3.text.toString()
-            viewModel.submitAnswer(answer)
+            viewModel.submitAnswer(binding.btnOption3.text.toString())
         }
 
         binding.btnBack.setOnClickListener {
             finish()
         }
 
-         viewModel.answerFeedback.observe(this) { message ->
-             showCustomToast(message)
-         }
-
-        viewModel.caseUnlocked.observe(this) { unlocked ->
-            if (unlocked == true) {
-                showCustomToast(getString(R.string.toast_case_unlocked))
-
-            }
-        }
-
-        viewModel.banditCaptured.observe(this) { captured ->
-            if (captured == true) {
-                showCustomToast(getString(R.string.toast_bandit_captured))
-
-            }
-        }
+        // ========== LOAD CASE ==========
 
         val caseId = intent.getIntExtra(EXTRA_CASE_ID, 1)
         viewModel.loadCase(caseId)
 
         val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
         viewModel.loadSavedProgress(savedIndex)
-
     }
 
+    // ========== TOAST ==========
+
     private fun showCustomToast(message: String) {
-        val inflater = layoutInflater
-        val layout = inflater.inflate(R.layout.custom_toast, null)
+        val layout = layoutInflater.inflate(R.layout.custom_toast, null)
         val textView = layout.findViewById<TextView>(R.id.tvToastMessage)
         textView.text = message
 

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== LAYOUT: Home Screen ==========
+     Shows hero section and navigation buttons for Missions,
+     Sheriff's Orders, and Case Files.
+-->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app"
         tools:context=".HomeActivity">
+
+    <!-- ========== HERO SECTION ========== -->
 
     <include
             android:id="@+id/hero_section"
@@ -34,20 +42,22 @@
         <TextView
                 android:id="@+id/tv_hero_title"
                 style="@style/Text_HeroTitle"
-                android:text="@string/hero_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/hero_title"
                 android:gravity="center" />
 
         <TextView
                 android:id="@+id/tv_hero_sub"
                 style="@style/Text_HeroSub"
-                android:text="@string/hero_sub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/hero_sub"
                 android:gravity="center"
                 android:paddingTop="@dimen/spacing_xs" />
     </LinearLayout>
+
+    <!-- ========== HOME BUTTONS ========== -->
 
     <LinearLayout
             android:id="@+id/home_btn_container"
@@ -63,7 +73,6 @@
             app:layout_constraintTop_toBottomOf="@id/hero_section"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-
 
         <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_start_mission"
@@ -81,7 +90,7 @@
                 android:id="@+id/btn_open_case_files"
                 style="@style/Button_Primary"
                 android:text="@string/action_open_files"
-                android:layout_marginBottom="@dimen/btn_margin_bottom"/>
+                android:layout_marginBottom="@dimen/btn_margin_bottom" />
 
     </LinearLayout>
 

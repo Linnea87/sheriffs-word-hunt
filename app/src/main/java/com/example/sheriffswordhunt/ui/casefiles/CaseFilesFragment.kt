@@ -14,12 +14,21 @@ import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
 import com.example.sheriffswordhunt.databinding.FragmentCaseFilesBinding
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
+// ========== UI: CASE FILES ==========
+// Displays available cases and locks/unlocks them based on progress.
+
 class CaseFilesFragment : Fragment() {
+
+    // ========== BINDING ==========
 
     private var _binding: FragmentCaseFilesBinding? = null
     private val binding get() = _binding!!
 
+    // ========== REPOSITORY ==========
+
     private lateinit var gameProgressRepository: GameProgressRepository
+
+    // ========== LIFECYCLE ==========
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,70 +44,43 @@ class CaseFilesFragment : Fragment() {
 
         val prefs = requireContext()
             .getSharedPreferences("game_progress", Context.MODE_PRIVATE)
+        gameProgressRepository = GameProgressRepositoryImpl(prefs)
 
         binding.btnBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
-        gameProgressRepository = GameProgressRepositoryImpl(prefs)
+        binding.tvCase1Title.setOnClickListener { openCase(1) }
+        binding.tvCase2Title.setOnClickListener { openCase(2) }
+        binding.tvCase3Title.setOnClickListener { openCase(3) }
 
-        binding.tvCase1Title.setOnClickListener {
-            openCase(1)
-        }
-
-        binding.tvCase2Title.setOnClickListener {
-            openCase(2)
-        }
-
-        binding.tvCase3Title.setOnClickListener {
-            openCase(3)
-        }
         updateCaseStates()
     }
 
+    // ========== UI UPDATES ==========
+
     private fun updateCaseStates() {
-        val case1Unlocked = gameProgressRepository.isCaseUnlocked(1)
-        val case2Unlocked = gameProgressRepository.isCaseUnlocked(2)
-        val case3Unlocked = gameProgressRepository.isCaseUnlocked(3)
-
-        setupCaseItem(
-            titleView = binding.tvCase1Title,
-            starView = binding.imgCase1Star,
-            unlocked = case1Unlocked
-        )
-
-        setupCaseItem(
-            titleView = binding.tvCase2Title,
-            starView = binding.imgCase2Star,
-            unlocked = case2Unlocked 
-        )
-
-        setupCaseItem(
-            titleView = binding.tvCase3Title,
-            starView = binding.imgCase3Star,
-            unlocked = case3Unlocked
-        )
+        setupCaseItem(binding.tvCase1Title, binding.imgCase1Star, gameProgressRepository.isCaseUnlocked(1))
+        setupCaseItem(binding.tvCase2Title, binding.imgCase2Star, gameProgressRepository.isCaseUnlocked(2))
+        setupCaseItem(binding.tvCase3Title, binding.imgCase3Star, gameProgressRepository.isCaseUnlocked(3))
     }
 
-    private fun setupCaseItem(
-        titleView: TextView,
-        starView: ImageView,
-        unlocked: Boolean
-    ) {
+    private fun setupCaseItem(titleView: TextView, starView: ImageView, unlocked: Boolean) {
+        val alpha = if (unlocked) 1f else 0.3f
         titleView.isEnabled = unlocked
         starView.isEnabled = unlocked
-
-        val alpha = if (unlocked) 1f else 0.3f
         titleView.alpha = alpha
         starView.alpha = alpha
-
     }
 
+    // ========== NAVIGATION ==========
+
     private fun openCase(caseId: Int) {
-        val intent = Intent(requireContext(), MissionActivity::class.java).apply {
-            putExtra(MissionActivity.EXTRA_CASE_ID, caseId)
-        }
-        startActivity(intent)
+        startActivity(
+            Intent(requireContext(), MissionActivity::class.java).apply {
+                putExtra(MissionActivity.EXTRA_CASE_ID, caseId)
+            }
+        )
     }
 
     override fun onDestroyView() {

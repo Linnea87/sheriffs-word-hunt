@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== BACKGROUND: Full-Screen Paper Texture ==========
+     Used on screens without a hero banner. A faded paper texture
+     sits over the primary background color.
+-->
+
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/bg_primary" />

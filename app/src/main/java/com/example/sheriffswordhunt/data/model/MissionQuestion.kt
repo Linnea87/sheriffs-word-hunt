@@ -1,6 +1,9 @@
 package com.example.sheriffswordhunt.data.model
 
-data class MissionQuestion (
+// ========== DATA MODEL: MISSION QUESTION ==========
+// Represents a single puzzle question inside a mission case.
+
+data class MissionQuestion(
     val id: Int,
     val caseId: Int,
     val prompt: String,

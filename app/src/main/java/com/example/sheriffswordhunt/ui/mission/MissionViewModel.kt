@@ -8,20 +8,21 @@ import com.example.sheriffswordhunt.data.model.MissionQuestion
 import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 
+// ========== VIEWMODEL: MISSION LOGIC ==========
+// Holds mission state: current case, questions, answers, unlocks, and bandit capture.
+
 class MissionViewModel(
     private val repository: MissionRepository,
     private val gameProgressRepository: GameProgressRepository
 ) : ViewModel() {
+
+    // ========== LIVE DATA ==========
+
     private val _currentCase = MutableLiveData<MissionCase>()
     val currentCase: LiveData<MissionCase> = _currentCase
 
     private val _currentQuestion = MutableLiveData<MissionQuestion>()
     val currentQuestion: LiveData<MissionQuestion> = _currentQuestion
-
-    private var questions: List<MissionQuestion> = emptyList()
-    private var currentIndex: Int = 0
-    private var correctAnswers: Int = 0
-    private var currentCaseId: Int = 1
 
     private val _answerFeedback = MutableLiveData<String>()
     val answerFeedback: LiveData<String> = _answerFeedback
@@ -31,6 +32,15 @@ class MissionViewModel(
 
     private val _banditCaptured = MutableLiveData<Boolean>()
     val banditCaptured: LiveData<Boolean> = _banditCaptured
+
+    // ========== INTERNAL STATE ==========
+
+    private var questions: List<MissionQuestion> = emptyList()
+    private var currentIndex: Int = 0
+    private var correctAnswers: Int = 0
+    private var currentCaseId: Int = 1
+
+    // ========== PUBLIC API ==========
 
     fun loadCase(caseId: Int) {
         currentCaseId = caseId
@@ -51,23 +61,15 @@ class MissionViewModel(
         }
     }
 
-    private fun showNextQuestion() {
-        if (currentIndex < questions.lastIndex) {
-            currentIndex++
-            _currentQuestion.value = questions[currentIndex]
-        }
-    }
-
     fun submitAnswer(answer: String) {
         val question = _currentQuestion.value ?: return
-
         val isCorrect = answer == question.correctAnswer
 
         if (isCorrect) {
             correctAnswers++
             _answerFeedback.value = question.feedbackCorrect
 
-            if ((_caseUnlocked.value != true) && correctAnswers >= 3) {
+            if (_caseUnlocked.value != true && correctAnswers >= 3) {
                 _caseUnlocked.value = true
 
                 val nextCaseId = currentCaseId + 1
@@ -77,19 +79,16 @@ class MissionViewModel(
                 }
             }
 
-            if ((_banditCaptured.value != true) && correctAnswers == questions.size) {
+            if (_banditCaptured.value != true && correctAnswers == questions.size) {
                 _banditCaptured.value = true
             }
 
             val isLastQuestion = currentIndex == questions.lastIndex
             if (!isLastQuestion) {
                 showNextQuestion()
-
-                gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
-            } else {
+            }
 
             gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
-        }
 
         } else {
             _answerFeedback.value = question.feedbackIncorrect
@@ -99,6 +98,15 @@ class MissionViewModel(
     fun loadSavedProgress(savedIndex: Int) {
         if (savedIndex in questions.indices) {
             currentIndex = savedIndex
+            _currentQuestion.value = questions[currentIndex]
+        }
+    }
+
+    // ========== HELPERS ==========
+
+    private fun showNextQuestion() {
+        if (currentIndex < questions.lastIndex) {
+            currentIndex++
             _currentQuestion.value = questions[currentIndex]
         }
     }

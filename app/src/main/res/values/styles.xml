@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== STYLES: Typography & Buttons ==========
+     Shared text styles and primary button variants.
+-->
+
 <resources>
 
     <!-- ========== HERO TEXT ========== -->
+
     <style name="Text_HeroTitle">
         <item name="android:fontFamily">@font/rye_regular</item>
         <item name="android:textColor">@color/text_primary</item>
@@ -16,13 +22,14 @@
     </style>
 
     <!-- ========== BUTTONS ========== -->
+
     <style name="Button_Primary">
         <item name="android:layout_width">@dimen/btn_width</item>
         <item name="android:layout_height">@dimen/btn_height</item>
 
         <item name="android:background">@drawable/bg_btn_primary</item>
 
-        <!-- Text + ikon -->
+        <!-- Label + icon -->
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:drawableTint">@color/text_primary</item>
         <item name="android:drawableTintMode">src_in</item>
@@ -44,12 +51,11 @@
     </style>
 
     <!-- ========== SMALL PRIMARY BUTTON (Back button) ========== -->
+
     <style name="Button_Primary_Small" parent="Button_Primary">
         <item name="android:layout_width">@dimen/back_btn_width</item>
         <item name="android:layout_height">@dimen/back_btn_height</item>
         <item name="android:textSize">@dimen/back_btn_text_size</item>
     </style>
-
-
 
 </resources>
