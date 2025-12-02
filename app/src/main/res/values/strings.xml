@@ -24,10 +24,28 @@
     <string name="action_open_orders">Sheriff’s orders</string>
     <string name="action_open_files">Case files</string>
 
-    <!-- ========== TOAST ========== -->
+    <!-- ========== PROGRESSION DIALOGS ========== -->
+    <string name="dialog_case_unlocked_title">Case unlocked!</string>
+    <string name="dialog_case_unlocked_message">Good work, Deputy.
+        A new case has opened — and tougher challenges lie ahead.</string>
 
-    <string name="toast_case_unlocked">Next case unlocked!</string>
-    <string name="toast_bandit_captured">Bandit captured! All words restored.</string>
+    <string name="dialog_bandit_captured_title">Bandit captured!</string>
+    <string name="dialog_bandit_captured_case1">Clay McCoy is captured at last!
+        When the verbs ran out, so did his luck — the outlaw couldn’t even run, hide, or escape.</string>
+
+    <string name="dialog_bandit_captured_case2">Lila Graves is behind bars!
+        The queen of broken sentences finally met a deputy who could finish what she started.</string>
+
+    <string name="dialog_bandit_captured_case3">Jasper ‘Dust’ Kane has fallen!
+        He claimed every noun was “lost in the desert”, but the Sheriff found them jangled in his saddlebag.</string>
+
+    <!-- fallback -->
+    <string name="dialog_bandit_captured_generic">You tracked ’em across the frontier,
+        outsmarted every trick, and brought ’em in. The town can rest easy — for now.</string>
+
+    <!-- ========== DIALOG BUTTONS ========== -->
+    <string name="dialog_button_continue">Continue</string>
+    <string name="dialog_button_back_to_town">Back to town</string>
 
     <!-- ========== CASE FILES ========== -->
 

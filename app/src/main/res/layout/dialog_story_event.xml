@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog"
+        android:padding="@dimen/spacing_m"
+        android:minWidth="@dimen/dialog_min_width">
+
+    <!-- TITLE -->
+    <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/roboto_slab_regular"
+            android:textSize="@dimen/text_size_subtitle"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="@dimen/spacing_s"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- MESSAGE -->
+    <TextView
+            android:id="@+id/tv_dialog_message"
+            android:layout_width="@dimen/dialog_message_width"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/roboto_slab_light"
+            android:textSize="@dimen/text_size_case_list"
+            android:gravity="center"
+            android:paddingTop="@dimen/spacing_xs"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- NEGATIVE BUTTON: Back to town -->
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_btn_negative"
+            style="@style/Button_Primary_XSmall"
+            android:text="@string/dialog_button_back_to_town"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:layout_marginEnd="@dimen/spacing_s"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_message"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dialog_btn_positive"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <!-- POSITIVE BUTTON: Continue -->
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_btn_positive"
+            style="@style/Button_Primary_XSmall"
+            android:text="@string/dialog_button_continue"
+            android:drawablePadding="@dimen/dialog_positive_drawable_padding"
+            android:layout_marginTop="@dimen/spacing_m"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_message"
+            app:layout_constraintStart_toEndOf="@id/dialog_btn_negative"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

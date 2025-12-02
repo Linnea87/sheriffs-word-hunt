@@ -67,81 +67,89 @@
                 android:layout_marginTop="@dimen/case_subtitle_margin_top" />
     </LinearLayout>
 
-
     <!-- ========== CASE LIST ========== -->
 
-    <!-- Case 1 -->
-    <ImageView
-            android:id="@+id/img_case1_star"
-            android:layout_width="@dimen/case_star_width"
-            android:layout_height="@dimen/case_star_height"
-            android:src="@drawable/ic_star_small"
+    <LinearLayout
+            android:id="@+id/case_list_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            app:layout_constraintTop_toBottomOf="@id/case_header_container"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case1_star_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case1_star_margin_top" />
+            android:layout_marginTop="@dimen/case_list_margin_top"
+            android:layout_marginStart="@dimen/case_list_margin_start">
 
-    <TextView
-            android:id="@+id/tv_case1_title"
-            android:layout_width="@dimen/case1_text_width"
-            android:layout_height="@dimen/case1_text_height"
-            android:text="@string/case1_list_title"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/roboto_slab_light"
-            android:textSize="@dimen/text_size_case_list"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case1_text_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case1_text_margin_top" />
+        <!-- CASE 1 -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/case_row_spacing">
 
-    <!-- Case 2 -->
-    <ImageView
-            android:id="@+id/img_case2_star"
-            android:layout_width="@dimen/case_star_width"
-            android:layout_height="@dimen/case_star_height"
-            android:src="@drawable/ic_star_small"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case2_star_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case2_star_margin_top" />
+            <ImageView
+                    android:id="@+id/img_case1_star"
+                    android:layout_width="@dimen/case_star_width"
+                    android:layout_height="@dimen/case_star_height"
+                    android:src="@drawable/ic_star_small" />
 
-    <TextView
-            android:id="@+id/tv_case2_title"
-            android:layout_width="@dimen/case2_text_width"
-            android:layout_height="@dimen/case2_text_height"
-            android:text="@string/case2_list_title"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/roboto_slab_light"
-            android:textSize="@dimen/text_size_case_list"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case2_text_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case2_text_margin_top" />
+            <TextView
+                    android:id="@+id/tv_case1_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/case_title_margin_start"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_case_list"
+                    android:fontFamily="@font/roboto_slab_light" />
+        </LinearLayout>
 
-    <!-- Case 3 -->
-    <ImageView
-            android:id="@+id/img_case3_star"
-            android:layout_width="@dimen/case_star_width"
-            android:layout_height="@dimen/case_star_height"
-            android:src="@drawable/ic_star_small"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case3_star_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case3_star_margin_top" />
+        <!-- CASE 2 -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/case_row_spacing">
 
-    <TextView
-            android:id="@+id/tv_case3_title"
-            android:layout_width="@dimen/case3_text_width"
-            android:layout_height="@dimen/case3_text_height"
-            android:text="@string/case3_list_title"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/roboto_slab_light"
-            android:textSize="@dimen/text_size_case_list"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/case3_text_margin_start"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="@dimen/case3_text_margin_top" />
+            <ImageView
+                    android:id="@+id/img_case2_star"
+                    android:layout_width="@dimen/case_star_width"
+                    android:layout_height="@dimen/case_star_height"
+                    android:src="@drawable/ic_star_small" />
 
+            <TextView
+                    android:id="@+id/tv_case2_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/case_title_margin_start"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_case_list"
+                    android:fontFamily="@font/roboto_slab_light" />
+        </LinearLayout>
+
+        <!-- CASE 3 -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/case_row_spacing">
+
+            <ImageView
+                    android:id="@+id/img_case3_star"
+                    android:layout_width="@dimen/case_star_width"
+                    android:layout_height="@dimen/case_star_height"
+                    android:src="@drawable/ic_star_small" />
+
+            <TextView
+                    android:id="@+id/tv_case3_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/case_title_margin_start"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_case_list"
+                    android:fontFamily="@font/roboto_slab_light" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- ========== BACK BUTTON ========== -->
 
