@@ -124,18 +124,15 @@ class MissionActivity : AppCompatActivity() {
 
         binding.btnOption1.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption1.text.toString())
-            val caseId = viewModel.currentCase.value?.id ?: 1
-            checkCaseUnlockProgress(caseId)        }
+        }
 
         binding.btnOption2.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption2.text.toString())
-            val caseId = viewModel.currentCase.value?.id ?: 1
-            checkCaseUnlockProgress(caseId)        }
+        }
 
         binding.btnOption3.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption3.text.toString())
-            val caseId = viewModel.currentCase.value?.id ?: 1
-            checkCaseUnlockProgress(caseId)        }
+        }
 
         binding.btnBack.setOnClickListener {
             finish()
@@ -150,35 +147,6 @@ class MissionActivity : AppCompatActivity() {
         viewModel.loadSavedProgress(savedIndex)
     }
 
-    private fun checkCaseUnlockProgress(caseId: Int) {
-        val questions = missionRepository.getQuestionsForCase(caseId)
-        val total = questions.size
-        val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
-
-        val answered = when {
-            savedIndex <= 0 -> 0
-            savedIndex >= total -> total
-            else -> savedIndex
-        }
-
-        if (answered >= 3) {
-            val nextCaseId = caseId + 1
-            val nextCaseExists = missionRepository.getCaseById(nextCaseId) != null
-
-            if (nextCaseExists && !gameProgressRepository.isCaseUnlocked(nextCaseId)) {
-                gameProgressRepository.unlockCase(nextCaseId)
-
-                dialogHelper.showCaseUnlockedDialog(
-                    onContinue = {
-                        // stanna kvar i mission
-                    },
-                    onBackToTown = {
-                        finish()
-                    }
-                )
-            }
-        }
-    }
 
     // ========== TOAST ==========
 
