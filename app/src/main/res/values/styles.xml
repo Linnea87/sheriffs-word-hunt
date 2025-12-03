@@ -58,4 +58,19 @@
         <item name="android:textSize">@dimen/back_btn_text_size</item>
     </style>
 
+    <!-- ========== X-SMALL PRIMARY BUTTON (Dialog button) ========== -->
+
+    <style name="Button_Primary_XSmall" parent="@style/Button_Primary_Small">
+        <item name="android:layout_width">@dimen/btn_xs_width</item>
+        <item name="android:layout_height">@dimen/btn_xs_height</item>
+
+        <item name="android:textSize">@dimen/btn_xs_text_size</item>
+
+        <item name="android:paddingStart">@dimen/btn_xs_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/btn_xs_padding_horizontal</item>
+
+        <!-- default: litet mellanrum ikon + text -->
+        <item name="android:drawablePadding">@dimen/btn_xs_drawable_padding</item>
+    </style>
+
 </resources>

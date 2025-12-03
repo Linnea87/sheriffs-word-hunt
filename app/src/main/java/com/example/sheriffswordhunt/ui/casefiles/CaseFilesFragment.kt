@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.sheriffswordhunt.R
 import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
+import com.example.sheriffswordhunt.data.repository.MissionRepository
+import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.FragmentCaseFilesBinding
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
@@ -27,6 +30,7 @@ class CaseFilesFragment : Fragment() {
     // ========== REPOSITORY ==========
 
     private lateinit var gameProgressRepository: GameProgressRepository
+    private val missionRepository: MissionRepository = MissionRepositoryImpl()
 
     // ========== LIFECYCLE ==========
 
@@ -55,6 +59,12 @@ class CaseFilesFragment : Fragment() {
         binding.tvCase3Title.setOnClickListener { openCase(3) }
 
         updateCaseStates()
+        updateCaseProgress()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateCaseProgress()
     }
 
     // ========== UI UPDATES ==========
@@ -86,5 +96,43 @@ class CaseFilesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun updateCaseProgress() {
+        updateSingleCaseProgress(
+            caseId = 1,
+            titleView = binding.tvCase1Title,
+            baseTitleRes = R.string.case1_list_title
+        )
+        updateSingleCaseProgress(
+            caseId = 2,
+            titleView = binding.tvCase2Title,
+            baseTitleRes = R.string.case2_list_title
+        )
+        updateSingleCaseProgress(
+            caseId = 3,
+            titleView = binding.tvCase3Title,
+            baseTitleRes = R.string.case3_list_title
+        )
+    }
+
+    private fun updateSingleCaseProgress(
+        caseId: Int,
+        titleView: TextView,
+        baseTitleRes: Int
+    ) {
+        val baseTitle = getString(baseTitleRes)
+        val questions = missionRepository.getQuestionsForCase(caseId)
+        val total = questions.size
+
+        if (total == 0) {
+            titleView.text = baseTitle
+            return
+        }
+
+        val savedAnswered = gameProgressRepository.getSavedQuestion(caseId)
+        val answered = savedAnswered.coerceIn(0, total)
+
+        titleView.text = "$baseTitle ($answered/$total)"
     }
 }

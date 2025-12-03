@@ -53,53 +53,70 @@ class MissionViewModel(
         questions = repository.getQuestionsForCase(caseId)
         currentIndex = 0
         correctAnswers = 0
-        _caseUnlocked.value = false
-        _banditCaptured.value = false
 
         if (questions.isNotEmpty()) {
             _currentQuestion.value = questions[currentIndex]
         }
+        _caseUnlocked.value = false
+        _banditCaptured.value = false
     }
 
     fun submitAnswer(answer: String) {
         val question = _currentQuestion.value ?: return
         val isCorrect = answer == question.correctAnswer
 
-        if (isCorrect) {
-            correctAnswers++
-            _answerFeedback.value = question.feedbackCorrect
-
-            if (_caseUnlocked.value != true && correctAnswers >= 3) {
-                _caseUnlocked.value = true
-
-                val nextCaseId = currentCaseId + 1
-                val nextCaseExists = repository.getCaseById(nextCaseId) != null
-                if (nextCaseExists) {
-                    gameProgressRepository.unlockCase(nextCaseId)
-                }
-            }
-
-            if (_banditCaptured.value != true && correctAnswers == questions.size) {
-                _banditCaptured.value = true
-            }
-
-            val isLastQuestion = currentIndex == questions.lastIndex
-            if (!isLastQuestion) {
-                showNextQuestion()
-            }
-
-            gameProgressRepository.saveCurrentQuestion(currentCaseId, currentIndex)
-
-        } else {
+        if (!isCorrect) {
             _answerFeedback.value = question.feedbackIncorrect
+            return
+        }
+
+        correctAnswers++
+        _answerFeedback.value = question.feedbackCorrect
+
+        if (correctAnswers == 3) {
+            val nextCaseId = currentCaseId + 1
+            if (repository.getCaseById(nextCaseId) != null) {
+                gameProgressRepository.unlockCase(nextCaseId)
+                _caseUnlocked.value = true
+            }
+        }
+
+        val isLastQuestion = currentIndex == questions.lastIndex
+
+        // Save progress (count answered questions)
+        val answeredCount = if (isLastQuestion) {
+            questions.size
+        } else {
+            currentIndex + 1
+        }
+        gameProgressRepository.saveCurrentQuestion(currentCaseId, answeredCount)
+
+        // Next question logic
+        if (!isLastQuestion) {
+            showNextQuestion()
+        }
+
+        // === FIX 2: Capture bandit only once ===
+        if (correctAnswers == questions.size) {
+            _banditCaptured.value = true
         }
     }
 
-    fun loadSavedProgress(savedIndex: Int) {
-        if (savedIndex in questions.indices) {
-            currentIndex = savedIndex
-            _currentQuestion.value = questions[currentIndex]
+    fun loadSavedProgress(savedAnsweredCount: Int) {
+        if (questions.isEmpty()) return
+
+        val total = questions.size
+        val answered = savedAnsweredCount.coerceIn(0, total)
+
+        correctAnswers = answered
+
+        currentIndex = if(answered >= total) {
+            total - 1
+        } else {
+            answered
         }
+
+        _currentQuestion.value = questions[currentIndex]
     }
 
     // ========== HELPERS ==========

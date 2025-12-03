@@ -1,6 +1,7 @@
 package com.example.sheriffswordhunt.ui.mission
 
 import android.os.Bundle
+import android.os.Looper
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -11,6 +12,8 @@ import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
+import android.os.Handler
+import com.example.sheriffswordhunt.ui.common.DialogHelper
 
 // ========== MISSION ACTIVITY ==========
 // Handles mission gameplay: loading questions, checking answers,
@@ -26,6 +29,9 @@ class MissionActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("game_progress", MODE_PRIVATE)
         GameProgressRepositoryImpl(prefs)
     }
+
+    private val dialogHandler by lazy { Handler(Looper.getMainLooper()) }
+    private lateinit var dialogHelper: DialogHelper
 
     companion object {
         const val EXTRA_CASE_ID = "extra_case_id"
@@ -43,6 +49,9 @@ class MissionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMissionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        dialogHelper = DialogHelper(this)
 
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_mission)
 
@@ -62,27 +71,71 @@ class MissionActivity : AppCompatActivity() {
 
         viewModel.answerFeedback.observe(this) { showCustomToast(it) }
 
-        viewModel.caseUnlocked.observe(this) {
-            if (it == true) showCustomToast(getString(R.string.toast_case_unlocked))
+        viewModel.caseUnlocked.observe(this) { unlocked ->
+            if (unlocked == true) {
+                dialogHandler.postDelayed({
+                    dialogHelper.showCaseUnlockedDialog(
+                        onContinue = {
+                            // stay in mission, nothing extra
+                        },
+                        onBackToTown = {
+                            finish()
+                        }
+                    )
+                }, 600)
+            }
         }
 
-        viewModel.banditCaptured.observe(this) {
-            if (it == true) showCustomToast(getString(R.string.toast_bandit_captured))
+        viewModel.banditCaptured.observe(this) { captured ->
+            if (captured == true) {
+                val case = viewModel.currentCase.value
+                val currentCaseId = case?.id ?: 1
+
+                val messageRes = when (currentCaseId) {
+                    1 -> R.string.dialog_bandit_captured_case1
+                    2 -> R.string.dialog_bandit_captured_case2
+                    3 -> R.string.dialog_bandit_captured_case3
+                    else -> R.string.dialog_bandit_captured_generic
+                }
+
+                val nextCaseId = currentCaseId + 1
+                val nextCaseExists = missionRepository.getCaseById(nextCaseId) != null
+
+                dialogHandler.postDelayed({
+                    dialogHelper.showBanditCapturedDialog(
+                        messageRes = messageRes,
+                        showContinue = nextCaseExists,
+                        onContinue = {
+                            val intent = intent.apply {
+                                putExtra(EXTRA_CASE_ID, nextCaseId)
+                            }
+                            finish()
+                            startActivity(intent)
+                        },
+                        onBackToTown = {
+                            finish()
+                        }
+                    )
+                }, 600)
+            }
         }
 
         // ========== BUTTON LISTENERS ==========
 
         binding.btnOption1.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption1.text.toString())
-        }
+            val caseId = viewModel.currentCase.value?.id ?: 1
+            checkCaseUnlockProgress(caseId)        }
 
         binding.btnOption2.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption2.text.toString())
-        }
+            val caseId = viewModel.currentCase.value?.id ?: 1
+            checkCaseUnlockProgress(caseId)        }
 
         binding.btnOption3.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption3.text.toString())
-        }
+            val caseId = viewModel.currentCase.value?.id ?: 1
+            checkCaseUnlockProgress(caseId)        }
 
         binding.btnBack.setOnClickListener {
             finish()
@@ -95,6 +148,36 @@ class MissionActivity : AppCompatActivity() {
 
         val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
         viewModel.loadSavedProgress(savedIndex)
+    }
+
+    private fun checkCaseUnlockProgress(caseId: Int) {
+        val questions = missionRepository.getQuestionsForCase(caseId)
+        val total = questions.size
+        val savedIndex = gameProgressRepository.getSavedQuestion(caseId)
+
+        val answered = when {
+            savedIndex <= 0 -> 0
+            savedIndex >= total -> total
+            else -> savedIndex
+        }
+
+        if (answered >= 3) {
+            val nextCaseId = caseId + 1
+            val nextCaseExists = missionRepository.getCaseById(nextCaseId) != null
+
+            if (nextCaseExists && !gameProgressRepository.isCaseUnlocked(nextCaseId)) {
+                gameProgressRepository.unlockCase(nextCaseId)
+
+                dialogHelper.showCaseUnlockedDialog(
+                    onContinue = {
+                        // stanna kvar i mission
+                    },
+                    onBackToTown = {
+                        finish()
+                    }
+                )
+            }
+        }
     }
 
     // ========== TOAST ==========
