@@ -1,15 +1,11 @@
 package com.example.sheriffswordhunt.ui.common
 
 import android.app.Activity
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import com.example.sheriffswordhunt.R
-
-// ========== DIALOG HELPER ==========
-// Shared dialog logic for case unlocked + bandit captured.
 
 class DialogHelper(private val activity: Activity) {
 

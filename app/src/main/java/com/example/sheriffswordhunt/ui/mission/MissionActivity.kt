@@ -2,8 +2,6 @@ package com.example.sheriffswordhunt.ui.mission
 
 import android.os.Bundle
 import android.os.Looper
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sheriffswordhunt.R
@@ -14,6 +12,7 @@ import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 import android.os.Handler
 import com.example.sheriffswordhunt.ui.common.DialogHelper
+import com.example.sheriffswordhunt.ui.common.ToastHelper
 
 // ========== MISSION ACTIVITY ==========
 // Handles mission gameplay: loading questions, checking answers,
@@ -33,8 +32,14 @@ class MissionActivity : AppCompatActivity() {
     private val dialogHandler by lazy { Handler(Looper.getMainLooper()) }
     private lateinit var dialogHelper: DialogHelper
 
+    private  val toastHelper by lazy { ToastHelper(this) }
+    private var lastToastShownAt: Long = 0L
+
     companion object {
         const val EXTRA_CASE_ID = "extra_case_id"
+
+        private const val TOAST_DURATION_MS = 2000L
+        private const val EXTRA_DELAY_AFTER_TOAST_MS = 400L
     }
 
     // ========== VIEWMODEL ==========
@@ -69,11 +74,14 @@ class MissionActivity : AppCompatActivity() {
             binding.btnOption3.text = question.options[2]
         }
 
-        viewModel.answerFeedback.observe(this) { showCustomToast(it) }
+        viewModel.answerFeedback.observe(this) { message ->
+            toastHelper.show(message)
+            lastToastShownAt = System.currentTimeMillis()
+        }
 
         viewModel.caseUnlocked.observe(this) { unlocked ->
             if (unlocked == true) {
-                dialogHandler.postDelayed({
+                runAfterToast {
                     dialogHelper.showCaseUnlockedDialog(
                         onContinue = {
                             // stay in mission, nothing extra
@@ -82,7 +90,7 @@ class MissionActivity : AppCompatActivity() {
                             finish()
                         }
                     )
-                }, 600)
+                }
             }
         }
 
@@ -101,7 +109,7 @@ class MissionActivity : AppCompatActivity() {
                 val nextCaseId = currentCaseId + 1
                 val nextCaseExists = missionRepository.getCaseById(nextCaseId) != null
 
-                dialogHandler.postDelayed({
+                runAfterToast {
                     dialogHelper.showBanditCapturedDialog(
                         messageRes = messageRes,
                         showContinue = nextCaseExists,
@@ -116,7 +124,7 @@ class MissionActivity : AppCompatActivity() {
                             finish()
                         }
                     )
-                }, 600)
+                }
             }
         }
 
@@ -147,26 +155,15 @@ class MissionActivity : AppCompatActivity() {
         viewModel.loadSavedProgress(savedIndex)
     }
 
+    private fun runAfterToast(block: () -> Unit) {
+        val now = System.currentTimeMillis()
 
-    // ========== TOAST ==========
+        val toastEndTime = lastToastShownAt + TOAST_DURATION_MS
 
-    private fun showCustomToast(message: String) {
-        val layout = layoutInflater.inflate(R.layout.custom_toast, null)
-        val textView = layout.findViewById<TextView>(R.id.tvToastMessage)
-        textView.text = message
+        val desiredTime = toastEndTime + EXTRA_DELAY_AFTER_TOAST_MS
+        val delay = (desiredTime - now).coerceAtLeast(0L)
 
-        @Suppress("DEPRECATION")
-        val toast = Toast(this).apply {
-            duration = Toast.LENGTH_SHORT
-            view = layout
-        }
-
-        toast.setGravity(
-            android.view.Gravity.CENTER_HORIZONTAL or android.view.Gravity.BOTTOM,
-            0,
-            150
-        )
-
-        toast.show()
+        dialogHandler.postDelayed( { block() }, delay)
     }
+
 }
