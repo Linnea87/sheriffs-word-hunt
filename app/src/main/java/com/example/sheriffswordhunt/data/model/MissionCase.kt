@@ -1,7 +1,7 @@
 package com.example.sheriffswordhunt.data.model
 
-// ========== DATA MODEL: MISSION CASE ==========
-// Represents a mission case with an ID, title, and subtitle.
+// ========== DATA MODEL: MISSION CASE ======================================
+// Immutable model representing a mission case with ID, title, and subtitle.
 
 data class MissionCase(
     val id: Int,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== DRAWABLE: Primary Button Background ==========
+<!-- ========== DRAWABLE: PRIMARY BUTTON BACKGROUND ==============
      Draws the button fill color, rounded corners, stroke outline
      and padding defined in dimens for consistent UI spacing.
 -->

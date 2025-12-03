@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- ========== LAYOUT: CUSTOM DIALOG ==========================
+     Used to show mission completion: case unlocked and bandit captured.
+-->
+
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +14,8 @@
         android:padding="@dimen/spacing_m"
         android:minWidth="@dimen/dialog_min_width">
 
-    <!-- TITLE -->
+    <!-- ========== TITLE ============================================ -->
+
     <TextView
             android:id="@+id/tv_dialog_title"
             android:layout_width="0dp"
@@ -23,7 +30,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- MESSAGE -->
+    <!-- ========== MESSAGE =========================================== -->
+
     <TextView
             android:id="@+id/tv_dialog_message"
             android:layout_width="@dimen/dialog_message_width"
@@ -37,7 +45,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- NEGATIVE BUTTON: Back to town -->
+    <!-- ========== BUTTONS ============================================ -->
+
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dialog_btn_negative"
             style="@style/Button_Primary_XSmall"
@@ -49,7 +58,6 @@
             app:layout_constraintEnd_toStartOf="@id/dialog_btn_positive"
             app:layout_constraintHorizontal_chainStyle="packed" />
 
-    <!-- POSITIVE BUTTON: Continue -->
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dialog_btn_positive"
             style="@style/Button_Primary_XSmall"

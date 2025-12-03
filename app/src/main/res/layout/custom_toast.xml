@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== LAYOUT: Custom Toast ==========
+<!-- ========== LAYOUT: CUSTOM TOAST ==============
      Displays a rounded paper-style toast message.
 -->
 
@@ -17,12 +17,12 @@
         android:minWidth="@dimen/toast_min_width">
 
     <TextView
-            android:id="@+id/tvToastMessage"
+            android:id="@+id/tv_toast_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_primary"
             android:fontFamily="@font/roboto_slab_regular"
-            android:textSize="@dimen/btn_text_size"
+            android:textSize="@dimen/toast_text_size"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

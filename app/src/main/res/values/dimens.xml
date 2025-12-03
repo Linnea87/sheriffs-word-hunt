@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== DIMENS: Global Spacing, Sizes & Typography ==========
+<!-- ========== DIMENS: GLOBAL SPACING, SIZES & TYPOGRAPHY ====================
      Central place for hero height, buttons, cards, case layout and orders UI.
 -->
 
 <resources>
 
-    <!-- ========== HERO ========== -->
+    <!-- ========== HERO ============================================ -->
 
     <dimen name="hero_height">200dp</dimen>
     <dimen name="text_size_hero_title">28sp</dimen>
     <dimen name="text_size_hero_sub">16sp</dimen>
 
-    <!-- ========== WELCOME ========== -->
+    <!-- ========== WELCOME ============================================ -->
 
     <dimen name="home_welcome_title_size">18sp</dimen>
     <dimen name="home_welcome_subtitle_size">15sp</dimen>
     <dimen name="home_intro_title_spacing">12dp</dimen>
     <dimen name="home_intro_subtitle_width">295dp</dimen>
 
-    <!-- ========== SPACING ========== -->
+    <!-- ========== SPACING ============================================ -->
 
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_s">8dp</dimen>
     <dimen name="spacing_m">16dp</dimen>
     <dimen name="spacing_l">24dp</dimen>
 
-    <!-- ========== CORNERS ========== -->
+    <!-- ========== CORNERS ============================================ -->
 
     <dimen name="corner_radius_s">8dp</dimen>
 
-    <!-- ========== BUTTONS ========== -->
+    <!-- ========== BUTTONS ============================================ -->
 
     <dimen name="btn_width">260dp</dimen>
     <dimen name="btn_height">72dp</dimen>
@@ -72,7 +72,7 @@
     <dimen name="dialog_min_width">320dp</dimen>
     <dimen name="dialog_message_width">280dp</dimen>
 
-    <!-- ========== MISSION LAYOUT ========== -->
+    <!-- ========== MISSION LAYOUT ============================================ -->
 
     <dimen name="mission_title_margin_top">52dp</dimen>
     <dimen name="question_card_width">300dp</dimen>
@@ -86,7 +86,7 @@
     <dimen name="answer_btn_width">90dp</dimen>
     <dimen name="answer_btn_height">60dp</dimen>
 
-    <!-- ========== TOAST ========== -->
+    <!-- ========== TOAST ============================================ -->
 
     <dimen name="toast_corner_radius">12dp</dimen>
     <dimen name="toast_padding_horizontal">16dp</dimen>
@@ -95,7 +95,7 @@
     <dimen name="toast_min_width">180dp</dimen>
     <dimen name="toast_text_size">18sp</dimen>
 
-    <!-- ========== CASE FILES ========== -->
+    <!-- ========== CASE FILES ============================================ -->
 
     <dimen name="paper_width">271dp</dimen>
     <dimen name="paper_height">406dp</dimen>
@@ -127,7 +127,7 @@
 
     <dimen name="case_title_margin_start">8dp</dimen>
 
-    <!-- ========== SHERIFF'S ORDERS ========== -->
+    <!-- ========== SHERIFF'S ORDERS ============================================ -->
 
     <dimen name="orders_title_margin_bottom">12dp</dimen>
     <dimen name="orders_wanted_width">183dp</dimen>
@@ -154,7 +154,7 @@
     <dimen name="orders_rule_vertical_spacing">8dp</dimen>
     <dimen name="orders_rule_extra_spacing">4dp</dimen>
 
-    <!-- ========== LAYOUT SPACING (SPECIALS) ========== -->
+    <!-- ========== LAYOUT SPACING (SPECIALS) ============================================ -->
 
     <dimen name="hero_content_margin_top">56dp</dimen>
 

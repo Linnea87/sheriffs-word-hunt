@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== LAYOUT: Case Files ==========
+<!-- ========== LAYOUT: CASE FILES ======================
      Displays the available cases on a paper background.
 -->
 
@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_app_full">
 
-    <!-- ========== PAPER BACKGROUND ========== -->
+    <!-- ========== PAPER BACKGROUND ============================================ -->
 
     <ImageView
             android:id="@+id/img_case_paper"
@@ -29,7 +29,7 @@
             app:layout_constraintVertical_bias="0.182" />
 
 
-    <!-- ========== HEADER BOX ========== -->
+    <!-- ========== HEADER BOX ============================================ -->
 
     <LinearLayout
             android:id="@+id/case_header_container"
@@ -67,7 +67,7 @@
                 android:layout_marginTop="@dimen/case_subtitle_margin_top" />
     </LinearLayout>
 
-    <!-- ========== CASE LIST ========== -->
+    <!-- ========== CASE LIST ============================================ -->
 
     <LinearLayout
             android:id="@+id/case_list_container"
@@ -151,7 +151,7 @@
 
     </LinearLayout>
 
-    <!-- ========== BACK BUTTON ========== -->
+    <!-- ========== BACK BUTTON ============================================ -->
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"

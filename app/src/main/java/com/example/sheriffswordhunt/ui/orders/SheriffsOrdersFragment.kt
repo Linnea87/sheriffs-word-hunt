@@ -7,17 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.sheriffswordhunt.databinding.FragmentSheriffsOrdersBinding
 
-// ========== UI: Sheriff's Orders ==========
+// ========== UI: Sheriff's Orders =========================================
 // Displays the sheriff's instructions and provides navigation back to Home.
 
 class SheriffsOrdersFragment : Fragment() {
 
-    // ========== BINDING ==========
+    // ========== BINDING =============================================
 
     private var _binding: FragmentSheriffsOrdersBinding? = null
     private val binding get() = _binding!!
 
-    // ========== LIFECYCLE ==========
+    // ========== LIFECYCLE =============================================
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +31,7 @@ class SheriffsOrdersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // ========== BUTTON LISTENERS ==========
+        // ========== BUTTON LISTENERS =============================================
 
         binding.btnBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()

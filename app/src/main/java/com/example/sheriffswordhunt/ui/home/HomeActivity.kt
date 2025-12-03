@@ -1,23 +1,24 @@
-package com.example.sheriffswordhunt
+package com.example.sheriffswordhunt.ui.home
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sheriffswordhunt.R
 import com.example.sheriffswordhunt.databinding.ActivityHomeBinding
 import com.example.sheriffswordhunt.ui.casefiles.CaseFilesFragment
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 import com.example.sheriffswordhunt.ui.orders.SheriffsOrdersFragment
 
-// ========== UI: Home Activity ==========
+// ========== UI: HOME ACTIVITY =====================================================
 // Entry screen for the game. Navigates to missions, Sheriff's Orders and Case Files.
 
 class HomeActivity : AppCompatActivity() {
 
-    // ========== BINDING ==========
+    // ========== BINDING =============================================
 
     private lateinit var binding: ActivityHomeBinding
 
-    // ========== LIFECYCLE ==========
+    // ========== LIFECYCLE =============================================
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_home)
 
-        // ========== NAVIGATION BUTTONS ==========
+        // ========== NAVIGATION BUTTONS =============================================
 
         binding.btnStartMission.setOnClickListener {
             val intent = Intent(this, MissionActivity::class.java)

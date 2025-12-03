@@ -6,7 +6,7 @@
 
 <resources>
 
-    <!-- ========== HERO TEXT ========== -->
+    <!-- ========== HERO TEXT ============================================ -->
 
     <style name="Text_HeroTitle">
         <item name="android:fontFamily">@font/rye_regular</item>
@@ -21,7 +21,7 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-    <!-- ========== BUTTONS ========== -->
+    <!-- ========== BUTTONS ============================================ -->
 
     <style name="Button_Primary">
         <item name="android:layout_width">@dimen/btn_width</item>
@@ -50,7 +50,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <!-- ========== SMALL PRIMARY BUTTON (Back button) ========== -->
+    <!-- ========== SMALL PRIMARY BUTTON (Back button) ============================================ -->
 
     <style name="Button_Primary_Small" parent="Button_Primary">
         <item name="android:layout_width">@dimen/back_btn_width</item>
@@ -58,7 +58,7 @@
         <item name="android:textSize">@dimen/back_btn_text_size</item>
     </style>
 
-    <!-- ========== X-SMALL PRIMARY BUTTON (Dialog button) ========== -->
+    <!-- ========== X-SMALL PRIMARY BUTTON (Dialog button) ============================================ -->
 
     <style name="Button_Primary_XSmall" parent="@style/Button_Primary_Small">
         <item name="android:layout_width">@dimen/btn_xs_width</item>
@@ -69,7 +69,6 @@
         <item name="android:paddingStart">@dimen/btn_xs_padding_horizontal</item>
         <item name="android:paddingEnd">@dimen/btn_xs_padding_horizontal</item>
 
-        <!-- default: litet mellanrum ikon + text -->
         <item name="android:drawablePadding">@dimen/btn_xs_drawable_padding</item>
     </style>
 

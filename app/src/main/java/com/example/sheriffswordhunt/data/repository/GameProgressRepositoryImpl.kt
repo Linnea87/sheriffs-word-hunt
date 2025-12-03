@@ -2,7 +2,7 @@ package com.example.sheriffswordhunt.data.repository
 
 import android.content.SharedPreferences
 
-// ========== REPOSITORY: GAME PROGRESS STORAGE ==========
+// ========== REPOSITORY: GAME PROGRESS STORAGE ===============================
 // Handles unlocking cases and saving/restoring the player's mission position.
 
 class GameProgressRepositoryImpl(
@@ -13,7 +13,7 @@ class GameProgressRepositoryImpl(
         private const val KEY_UNLOCK_PREFIX = "case_unlocked_"
     }
 
-    // ========== UNLOCK STATE ==========
+    // ========== UNLOCK STATE =============================================
 
     override fun isCaseUnlocked(caseId: Int): Boolean {
         if (caseId == 1) return true
@@ -27,7 +27,7 @@ class GameProgressRepositoryImpl(
             .apply()
     }
 
-    // ========== QUESTION PROGRESS ==========
+    // ========== QUESTION PROGRESS =============================================
 
     override fun saveCurrentQuestion(caseId: Int, questionIndex: Int) {
         prefs.edit()

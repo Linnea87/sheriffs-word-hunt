@@ -17,22 +17,22 @@ import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.FragmentCaseFilesBinding
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 
-// ========== UI: CASE FILES ==========
+// ========== UI: CASE FILES =========================================
 // Displays available cases and locks/unlocks them based on progress.
 
 class CaseFilesFragment : Fragment() {
 
-    // ========== BINDING ==========
+    // ========== BINDING =============================================
 
     private var _binding: FragmentCaseFilesBinding? = null
     private val binding get() = _binding!!
 
-    // ========== REPOSITORY ==========
+    // ========== REPOSITORY =============================================
 
     private lateinit var gameProgressRepository: GameProgressRepository
     private val missionRepository: MissionRepository = MissionRepositoryImpl()
 
-    // ========== LIFECYCLE ==========
+    // ========== LIFECYCLE =============================================
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -67,12 +67,20 @@ class CaseFilesFragment : Fragment() {
         updateCaseProgress()
     }
 
-    // ========== UI UPDATES ==========
+    // ========== UI UPDATES =============================================
 
     private fun updateCaseStates() {
-        setupCaseItem(binding.tvCase1Title, binding.imgCase1Star, gameProgressRepository.isCaseUnlocked(1))
-        setupCaseItem(binding.tvCase2Title, binding.imgCase2Star, gameProgressRepository.isCaseUnlocked(2))
-        setupCaseItem(binding.tvCase3Title, binding.imgCase3Star, gameProgressRepository.isCaseUnlocked(3))
+        setupCaseItem(binding.tvCase1Title,
+            binding.imgCase1Star,
+            gameProgressRepository.isCaseUnlocked(1))
+
+        setupCaseItem(binding.tvCase2Title,
+            binding.imgCase2Star,
+            gameProgressRepository.isCaseUnlocked(2))
+
+        setupCaseItem(binding.tvCase3Title,
+            binding.imgCase3Star,
+            gameProgressRepository.isCaseUnlocked(3))
     }
 
     private fun setupCaseItem(titleView: TextView, starView: ImageView, unlocked: Boolean) {
@@ -83,11 +91,12 @@ class CaseFilesFragment : Fragment() {
         starView.alpha = alpha
     }
 
-    // ========== NAVIGATION ==========
+    // ========== NAVIGATION =============================================
 
     private fun openCase(caseId: Int) {
         startActivity(
-            Intent(requireContext(), MissionActivity::class.java).apply {
+            Intent(requireContext(),
+                MissionActivity::class.java).apply {
                 putExtra(MissionActivity.EXTRA_CASE_ID, caseId)
             }
         )

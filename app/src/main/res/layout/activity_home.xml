@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== LAYOUT: Home Screen ==========
+<!-- ========== LAYOUT: HOME SCREEN ===========================
      Shows hero section, welcome intro, and navigation buttons
      for Missions, Sheriff's Orders, and Case Files.
 -->
@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_app"
-        tools:context=".HomeActivity">
+        tools:context=".ui.home.HomeActivity">
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- ========== HERO SECTION ============================================ -->
 
     <include
             android:id="@+id/hero_section"
@@ -57,7 +57,7 @@
                 android:paddingTop="@dimen/spacing_xs" />
     </LinearLayout>
 
-    <!-- ========== HOME INTRO TEXT ========== -->
+    <!-- ========== HOME INTRO TEXT ============================================ -->
 
     <LinearLayout
             android:id="@+id/home_intro_container"
@@ -93,7 +93,7 @@
                 android:layout_marginTop="@dimen/home_intro_title_spacing" />
     </LinearLayout>
 
-    <!-- ========== HOME BUTTONS ========== -->
+    <!-- ========== HOME BUTTONS ============================================ -->
 
     <LinearLayout
             android:id="@+id/home_btn_container"
@@ -130,7 +130,5 @@
                 android:layout_marginBottom="@dimen/btn_margin_bottom" />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

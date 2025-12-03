@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 
-// ========== VIEWMODEL FACTORY: MISSION ==========
+// ========== VIEWMODEL FACTORY: MISSION ===============
 // Creates MissionViewModel with required repositories.
 
 class MissionViewModelFactory(
