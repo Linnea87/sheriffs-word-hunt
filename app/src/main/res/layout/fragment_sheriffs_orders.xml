@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== LAYOUT: Sheriff's Orders ==========
+<!-- ========== LAYOUT: SHERIFF'S ORDERS ==================
      Shows the intro story, rules and back to town button.
 -->
 
@@ -13,7 +13,7 @@
         android:clickable="true"
         android:focusable="true">
 
-    <!-- ========== TITLE ========== -->
+    <!-- ========== TITLE ============================================ -->
 
     <TextView
             android:id="@+id/tv_orders_title"
@@ -30,7 +30,7 @@
             android:layout_marginTop="16dp" />
 
 
-    <!-- ========== WANTED POSTER ========== -->
+    <!-- ========== WANTED POSTER ============================================ -->
 
     <ImageView
             android:id="@+id/img_wanted"
@@ -47,7 +47,7 @@
             android:layout_marginTop="@dimen/orders_title_margin_bottom" />
 
 
-    <!-- ========== SUBTITLE TEXT ========== -->
+    <!-- ========== SUBTITLE TEXT ============================================ -->
 
     <TextView
             android:id="@+id/tv_orders_subtitle"
@@ -66,7 +66,7 @@
             android:layout_marginTop="@dimen/orders_subtitle_margin_top" />
 
 
-    <!-- ========== HOW TO PLAY HEADING ========== -->
+    <!-- ========== HOW TO PLAY HEADING ============================================ -->
 
     <TextView
             android:id="@+id/tv_how_to_play"
@@ -82,7 +82,7 @@
             android:layout_marginTop="@dimen/orders_how_to_margin_top" />
 
 
-    <!-- ========== RULES ========== -->
+    <!-- ========== RULES ============================================ -->
 
     <!-- Rule 1 -->
     <ImageView
@@ -220,7 +220,7 @@
             android:layout_marginEnd="@dimen/orders_subtitle_margin_horizontal" />
 
 
-    <!-- ========== BACK BUTTON ========== -->
+    <!-- ========== BACK BUTTON ============================================ -->
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"

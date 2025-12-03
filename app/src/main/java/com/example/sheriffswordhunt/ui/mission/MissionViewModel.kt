@@ -8,7 +8,7 @@ import com.example.sheriffswordhunt.data.model.MissionQuestion
 import com.example.sheriffswordhunt.data.repository.GameProgressRepository
 import com.example.sheriffswordhunt.data.repository.MissionRepository
 
-// ========== VIEWMODEL: MISSION LOGIC ==========
+// ========== VIEWMODEL: MISSION LOGIC ================================================
 // Holds mission state: current case, questions, answers, unlocks, and bandit capture.
 
 class MissionViewModel(
@@ -16,7 +16,7 @@ class MissionViewModel(
     private val gameProgressRepository: GameProgressRepository
 ) : ViewModel() {
 
-    // ========== LIVE DATA ==========
+    // ========== LIVE DATA =============================================
 
     private val _currentCase = MutableLiveData<MissionCase>()
     val currentCase: LiveData<MissionCase> = _currentCase
@@ -33,14 +33,14 @@ class MissionViewModel(
     private val _banditCaptured = MutableLiveData<Boolean>()
     val banditCaptured: LiveData<Boolean> = _banditCaptured
 
-    // ========== INTERNAL STATE ==========
+    // ========== INTERNAL STATE =============================================
 
     private var questions: List<MissionQuestion> = emptyList()
     private var currentIndex: Int = 0
     private var correctAnswers: Int = 0
     private var currentCaseId: Int = 1
 
-    // ========== PUBLIC API ==========
+    // ========== PUBLIC API =============================================
 
     fun loadCase(caseId: Int) {
         currentCaseId = caseId
@@ -96,7 +96,6 @@ class MissionViewModel(
             showNextQuestion()
         }
 
-        // === FIX 2: Capture bandit only once ===
         if (correctAnswers == questions.size) {
             _banditCaptured.value = true
         }
@@ -110,7 +109,7 @@ class MissionViewModel(
 
         correctAnswers = answered
 
-        currentIndex = if(answered >= total) {
+        currentIndex = if (answered >= total) {
             total - 1
         } else {
             answered
@@ -119,7 +118,7 @@ class MissionViewModel(
         _currentQuestion.value = questions[currentIndex]
     }
 
-    // ========== HELPERS ==========
+    // ========== HELPERS =============================================
 
     private fun showNextQuestion() {
         if (currentIndex < questions.lastIndex) {

@@ -14,12 +14,12 @@ import android.os.Handler
 import com.example.sheriffswordhunt.ui.common.DialogHelper
 import com.example.sheriffswordhunt.ui.common.ToastHelper
 
-// ========== MISSION ACTIVITY ==========
+// ========== MISSION ACTIVITY ===================================
 // Handles mission gameplay: loading questions, checking answers,
 // showing feedback, and saving player progress.
 class MissionActivity : AppCompatActivity() {
 
-    // ========== BINDING & REPOSITORIES ==========
+    // ========== BINDING & REPOSITORIES =============================================
 
     private lateinit var binding: ActivityMissionBinding
     private val missionRepository: MissionRepository = MissionRepositoryImpl()
@@ -32,7 +32,7 @@ class MissionActivity : AppCompatActivity() {
     private val dialogHandler by lazy { Handler(Looper.getMainLooper()) }
     private lateinit var dialogHelper: DialogHelper
 
-    private  val toastHelper by lazy { ToastHelper(this) }
+    private val toastHelper by lazy { ToastHelper(this) }
     private var lastToastShownAt: Long = 0L
 
     companion object {
@@ -42,13 +42,13 @@ class MissionActivity : AppCompatActivity() {
         private const val EXTRA_DELAY_AFTER_TOAST_MS = 400L
     }
 
-    // ========== VIEWMODEL ==========
+    // ========== VIEWMODEL =============================================
 
     private val viewModel: MissionViewModel by viewModels {
         MissionViewModelFactory(missionRepository, gameProgressRepository)
     }
 
-    // ========== LIFECYCLE ==========
+    // ========== LIFECYCLE =============================================
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +60,7 @@ class MissionActivity : AppCompatActivity() {
 
         binding.heroSection.imgHero.setImageResource(R.drawable.hero_mission)
 
-        // ========== OBSERVERS ==========
+        // ========== OBSERVERS =============================================
 
         viewModel.currentCase.observe(this) { case ->
             binding.tvMissionTitle.text = case.title
@@ -128,7 +128,7 @@ class MissionActivity : AppCompatActivity() {
             }
         }
 
-        // ========== BUTTON LISTENERS ==========
+        // ========== BUTTON LISTENERS =============================================
 
         binding.btnOption1.setOnClickListener {
             viewModel.submitAnswer(binding.btnOption1.text.toString())
@@ -146,7 +146,7 @@ class MissionActivity : AppCompatActivity() {
             finish()
         }
 
-        // ========== LOAD CASE ==========
+        // ========== LOAD CASE =============================================
 
         val caseId = intent.getIntExtra(EXTRA_CASE_ID, 1)
         viewModel.loadCase(caseId)
@@ -163,7 +163,7 @@ class MissionActivity : AppCompatActivity() {
         val desiredTime = toastEndTime + EXTRA_DELAY_AFTER_TOAST_MS
         val delay = (desiredTime - now).coerceAtLeast(0L)
 
-        dialogHandler.postDelayed( { block() }, delay)
+        dialogHandler.postDelayed({ block() }, delay)
     }
 
 }

@@ -7,9 +7,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import com.example.sheriffswordhunt.R
 
+// ========== UI HELPER: STORY EVENT DIALOGS ==============================
+// Provides reusable dialogs for case unlocked and bandit captured events.
+
 class DialogHelper(private val activity: Activity) {
 
-    // ========== CASE UNLOCKED ==========
+    // ========== CASE UNLOCKED =============================================
 
     fun showCaseUnlockedDialog(
         onContinue: () -> Unit,
@@ -45,7 +48,7 @@ class DialogHelper(private val activity: Activity) {
         dialog.show()
     }
 
-    // ========== BANDIT CAPTURED ==========
+    // ========== BANDIT CAPTURED =============================================
 
     fun showBanditCapturedDialog(
         messageRes: Int,
@@ -94,7 +97,7 @@ class DialogHelper(private val activity: Activity) {
         dialog.show()
     }
 
-    // ========== INTERNAL ==========
+    // ========== INTERNAL =============================================
 
     private fun inflateDialog(): View {
         return activity.layoutInflater.inflate(R.layout.dialog_story_event, null)

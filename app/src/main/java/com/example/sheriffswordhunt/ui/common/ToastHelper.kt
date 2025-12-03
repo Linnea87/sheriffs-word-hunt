@@ -6,11 +6,14 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.sheriffswordhunt.R
 
+// ========== UI HELPER: CUSTOM TOAST =======================
+// Displays a styled toast positioned under the hero section.
+
 class ToastHelper(private val activity: Activity) {
 
     fun show(message: String) {
         val layout = activity.layoutInflater.inflate(R.layout.custom_toast, null)
-        val textView = layout.findViewById<TextView>(R.id.tvToastMessage)
+        val textView = layout.findViewById<TextView>(R.id.tv_toast_message)
         textView.text = message
 
         @Suppress("DEPRECATION")

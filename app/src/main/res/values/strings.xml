@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== STRINGS: Global App Text ==========
+<!-- ========== STRINGS: GLOBAL APP TEXT ====================
      All UI text for the hero section, missions, case files,
      buttons, toasts and Sheriff’s orders.
 -->
@@ -8,23 +8,25 @@
 <resources>
     <string name="app_name">SheriffsWordHunt</string>
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- ========== HERO SECTION ============================================ -->
 
     <string name="hero_title">Sheriff’s Word Hunt</string>
     <string name="hero_sub">Your language adventure begins here!</string>
 
-    <!-- ========== WELCOME SECTION ========== -->
+    <!-- ========== WELCOME SECTION ============================================ -->
+
     <string name="home_welcome_title">Howdy, Deputy!</string>
     <string name="home_welcome_subtitle">Before you ride out, the Sheriff left a briefing for you.
         Check Sheriff’s Orders to learn what you’ll be up against.</string>
 
-    <!-- ========== ACTION ========== -->
+    <!-- ========== ACTION ============================================ -->
 
     <string name="action_start_mission">Start mission</string>
     <string name="action_open_orders">Sheriff’s orders</string>
     <string name="action_open_files">Case files</string>
 
-    <!-- ========== PROGRESSION DIALOGS ========== -->
+    <!-- ========== PROGRESSION DIALOGS ============================================ -->
+
     <string name="dialog_case_unlocked_title">Case unlocked!</string>
     <string name="dialog_case_unlocked_message">Good work, Deputy.
         A new case has opened — and tougher challenges lie ahead.</string>
@@ -43,11 +45,12 @@
     <string name="dialog_bandit_captured_generic">You tracked ’em across the frontier,
         outsmarted every trick, and brought ’em in. The town can rest easy — for now.</string>
 
-    <!-- ========== DIALOG BUTTONS ========== -->
+    <!-- ========== DIALOG BUTTONS ============================================ -->
+
     <string name="dialog_button_continue">Continue</string>
     <string name="dialog_button_back_to_town">Back to town</string>
 
-    <!-- ========== CASE FILES ========== -->
+    <!-- ========== CASE FILES ============================================ -->
 
     <string name="case_files_paper_desc">Background paper texture for case files</string>
     <string name="case_files_title">Case files</string>
@@ -60,10 +63,11 @@
 
     <string name="cd_case_star">Case item bullet star</string>
 
-    <!-- ========== SHERIFF'S ORDERS ========== -->
+    <!-- ========== SHERIFF'S ORDERS ============================================ -->
 
     <string name="sheriffs_order_title">Sheriff’s orders</string>
-    <string name="sheriffs_orders_subtitle">Three bandits have scattered stolen words across the frontier. Solve their puzzles and bring every last one to justice.</string>
+    <string name="sheriffs_orders_subtitle">Three bandits have scattered stolen words across the frontier.
+        Solve their puzzles and bring every last one to justice.</string>
 
     <string name="rule1_list_title">A sentence is shown</string>
     <string name="rule2_list_title">One word is missing</string>

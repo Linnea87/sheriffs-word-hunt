@@ -1,6 +1,6 @@
 package com.example.sheriffswordhunt.data.repository
 
-// ========== REPOSITORY CONTRACT: GAME PROGRESS ==========
+// ========== REPOSITORY CONTRACT: GAME PROGRESS ============
 // Defines how the app stores and retrieves player progress.
 
 interface GameProgressRepository {

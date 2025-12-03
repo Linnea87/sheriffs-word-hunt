@@ -3,7 +3,7 @@ package com.example.sheriffswordhunt.data.repository
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
 
-// ========== REPOSITORY CONTRACT: MISSION DATA ==========
+// ========== REPOSITORY CONTRACT: MISSION DATA ============
 // Provides access to cases and their associated questions.
 
 interface MissionRepository {

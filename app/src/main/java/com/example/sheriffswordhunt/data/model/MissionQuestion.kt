@@ -1,7 +1,7 @@
 package com.example.sheriffswordhunt.data.model
 
-// ========== DATA MODEL: MISSION QUESTION ==========
-// Represents a single puzzle question inside a mission case.
+// ========== DATA MODEL: MISSION QUESTION ================
+// Immutable model representing a single mission question.
 
 data class MissionQuestion(
     val id: Int,

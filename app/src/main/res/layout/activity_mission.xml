@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- ========== LAYOUT: Mission Screen ==========
+<!-- ========== LAYOUT: MISSION SCREEN ====================
      Shows current case title, puzzle text, answer options
      and a Back to town button.
 -->
@@ -14,7 +14,7 @@
         android:background="@drawable/bg_app"
         tools:context=".ui.mission.MissionActivity">
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- ========== HERO SECTION ============================================ -->
 
     <include
             android:id="@+id/hero_section"
@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- ========== MISSION TEXT (TITLE & SUBTITLE) ========== -->
+    <!-- ========== MISSION TEXT ============================================ -->
 
     <TextView
             android:id="@+id/tv_mission_title"
@@ -56,7 +56,7 @@
             app:layout_constraintHorizontal_bias="0.505"
             tools:text="Short description of the current case." />
 
-    <!-- ========== QUESTION CARD ========== -->
+    <!-- ========== QUESTION CARD ============================================ -->
 
     <LinearLayout
             android:id="@+id/question_card"
@@ -85,7 +85,7 @@
                 tools:text="The cowboy ____ across the desert." />
     </LinearLayout>
 
-    <!-- ========== ANSWER BUTTONS ========== -->
+    <!-- ========== ANSWER BUTTONS ============================================ -->
 
     <LinearLayout
             android:id="@+id/answers_container"
@@ -128,7 +128,7 @@
                 tools:text="Option 3" />
     </LinearLayout>
 
-    <!-- ========== BACK TO TOWN BUTTON ========== -->
+    <!-- ========== BACK TO TOWN BUTTON ============================================ -->
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"

@@ -3,14 +3,14 @@ package com.example.sheriffswordhunt.data.repository
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion
 
-// ========== REPOSITORY: MISSION DATA PROVIDER ==========
+// ========== REPOSITORY: MISSION DATA PROVIDER ===============
 // Supplies case and question data for the game.
 // Currently uses hardcoded content, but can later be replaced
 // with a server or database source.
 
 class MissionRepositoryImpl : MissionRepository {
 
-    // ========== CASE DEFINITIONS ==========
+    // ========== CASE DEFINITIONS =============================================
 
     private val cases = listOf(
         MissionCase(
@@ -30,7 +30,7 @@ class MissionRepositoryImpl : MissionRepository {
         )
     )
 
-    // ========== QUESTIONS ==========
+    // ========== QUESTIONS =============================================
 
     private val questions = listOf(
 
@@ -130,7 +130,7 @@ class MissionRepositoryImpl : MissionRepository {
         MissionQuestion(
             id = 11,
             caseId = 2,
-            prompt = "Lila Grave is clever, ____ he is not faster than the law.",
+            prompt = "Lila Graves is clever, ____ she is not faster than the law.",
             correctAnswer = "but",
             options = listOf("but", "and", "so"),
             feedbackCorrect = "⭐ Correct, deputy.\nThe word was recovered!",
@@ -203,7 +203,7 @@ class MissionRepositoryImpl : MissionRepository {
         )
     )
 
-    // ========== PUBLIC ACCESS ==========
+    // ========== PUBLIC ACCESS =============================================
 
     override fun getCases(): List<MissionCase> = cases
 

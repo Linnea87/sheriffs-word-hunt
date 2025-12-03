@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- ========== BACKGROUND: CENTERED PAPER TEXTURE =================
+     Used when the paper texture should appear centered instead of
+     filling the entire background.
+-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@color/bg_primary" />
