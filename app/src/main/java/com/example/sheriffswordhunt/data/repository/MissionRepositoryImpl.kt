@@ -130,7 +130,7 @@ class MissionRepositoryImpl : MissionRepository {
         MissionQuestion(
             id = 11,
             caseId = 2,
-            prompt = "Clay McCoy is clever, ____ he is not faster than the law.",
+            prompt = "Lila Grave is clever, ____ he is not faster than the law.",
             correctAnswer = "but",
             options = listOf("but", "and", "so"),
             feedbackCorrect = "⭐ Correct, deputy.\nThe word was recovered!",
