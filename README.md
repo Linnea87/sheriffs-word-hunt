@@ -75,6 +75,8 @@ The app communicates through clear buttons, minimal choices, simple text, and sh
 - Calming, low-contrast visuals
 - Reduced cognitive load through simple layouts
 
+[Back to top](#table-of-contents)
+
 ## Agile Planning
 The development of Sheriff’s Word Hunt was planned using Agile methodology. All functionality was divided into Epics and refined into User Stories, each assigned a MoSCoW priority.
 
@@ -184,6 +186,8 @@ The UML diagram was created in [Lucidchart](https://www.lucidchart.com/) and pro
 
 ![UML Diagram](docs/uml_diagram_v2.png)
 
+[Back to top](#table-of-contents)
+
 ## Design
 The design of Sheriff’s Word Hunt focuses on creating a calm, readable, and thematic visual experience. 
 The Western-inspired colour palette, textured cards, and simple screen layouts support a low-cognitive-load 
@@ -230,6 +234,8 @@ Sheriff’s Word Hunt uses two fonts chosen to balance Wild West style with chil
 Roboto Slab is used in multiple weights (Regular and Light) to keep the interface calm, readable, and visually consistent.
 Its clean geometric shapes and soft serifs support accessibility, especially for children who may struggle with high-contrast or overly decorative text (e.g., dyslexia, ADHD).
 
+[Back to top](#table-of-contents)
+
 ## Features
 Sheriff’s Word Hunt includes a range of features designed to create a smooth, engaging, and child-friendly learning experience.
 This section provides an overview of all implemented functionality, from the home screen and gameplay flow to accessibility-minded UI elements and progress-saving systems.
@@ -274,6 +280,8 @@ This section provides an overview of all implemented functionality, from the hom
 - **Statistics Screen:** Show total progress, accuracy, and completed missions.
 - **Difficulty Levels:** Introduce beginner/intermediate/advanced modes with varied question types.
 - **Language Settings:** Allow choosing English/Swedish interface and puzzles.
+
+[Back to top](#table-of-contents)
 
 ## Testing
 The application was thoroughly tested throughout the development process to ensure reliability, consistent gameplay, and correct behavior across different device sizes.
@@ -324,6 +332,8 @@ This ensures the unlock event happens exactly when the player reaches three corr
 
 ### Unfixed Bugs
 There are currently no known unfixed bugs.
+
+[Back to top](#table-of-contents)
 
 ## Technologies
 The development of Sheriff’s Word Hunt is built on a modern Android stack focused on clarity, maintainability, and a smooth user experience.  
@@ -402,7 +412,9 @@ These overrides happen *even when* you manually set `android:background`, causin
       - Requires no external services or API keys
 
 The app will launch directly on the selected device and is ready to test without further configuration.
-   
+
+[Back to top](#table-of-contents) 
+
 ## Credits
 This section lists all sources used in the project, including written content and visual assets.
 Only external media that is not created by the developer is referenced here to ensure transparency and proper attribution.
