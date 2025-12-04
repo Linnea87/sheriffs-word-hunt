@@ -1,6 +1,6 @@
 # Sheriff’s Word Hunt
 
-![Mockup](docs/mockup.png)
+![Mockup](docs/mockup_v2.png)
 
 Sheriff’s Word Hunt is a playful and immersive language game designed for children ages 10–13.
 Players step into the role of junior deputies in a Wild West town where a mysterious bandit has been stealing words from sentences. Their mission is to solve language puzzles, catch the culprit, and restore order — one word at a time.
