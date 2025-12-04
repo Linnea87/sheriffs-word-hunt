@@ -64,6 +64,7 @@ class CaseFilesFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        updateCaseStates()
         updateCaseProgress()
     }
 
