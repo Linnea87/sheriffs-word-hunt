@@ -181,6 +181,7 @@ The project is organized using a GitHub Project Kanban board to track progress f
 
 ### UML Diagram
 The UML diagram was created in [Lucidchart](https://www.lucidchart.com/) and provides a high-level overview of the app’s architecture. It focuses on the main structural components and their relationships. As the project naturally evolved during the development process, the final implementation differs slightly from the original design. For this reason, the diagram does not include smaller helper classes or utility files and should be viewed as a conceptual guide rather than an exact representation of the full codebase.
+
 ![UML Diagram](docs/uml_diagram_v2.png)
 
 ## Design
