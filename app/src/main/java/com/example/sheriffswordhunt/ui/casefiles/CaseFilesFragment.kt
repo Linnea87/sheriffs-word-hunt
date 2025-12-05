@@ -10,10 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.sheriffswordhunt.R
-import com.example.sheriffswordhunt.data.repository.GameProgressRepository
-import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
-import com.example.sheriffswordhunt.data.repository.MissionRepository
-import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
+import com.example.sheriffswordhunt.data.progress.GameProgressRepository
+import com.example.sheriffswordhunt.data.progress.GameProgressRepositoryImpl
+import com.example.sheriffswordhunt.data.mission.MissionRepository
+import com.example.sheriffswordhunt.data.mission.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.FragmentCaseFilesBinding
 import com.example.sheriffswordhunt.ui.mission.MissionActivity
 

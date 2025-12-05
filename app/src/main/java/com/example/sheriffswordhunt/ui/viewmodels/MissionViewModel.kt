@@ -1,12 +1,12 @@
-package com.example.sheriffswordhunt.ui.mission
+package com.example.sheriffswordhunt.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.sheriffswordhunt.data.model.MissionCase
-import com.example.sheriffswordhunt.data.model.MissionQuestion
-import com.example.sheriffswordhunt.data.repository.GameProgressRepository
-import com.example.sheriffswordhunt.data.repository.MissionRepository
+import com.example.sheriffswordhunt.data.mission.MissionRepository
+import com.example.sheriffswordhunt.data.models.MissionCase
+import com.example.sheriffswordhunt.data.models.MissionQuestion
+import com.example.sheriffswordhunt.data.progress.GameProgressRepository
 
 // ========== VIEWMODEL: MISSION LOGIC ================================================
 // Holds mission state: current case, questions, answers, unlocks, and bandit capture.

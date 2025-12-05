@@ -1,7 +1,7 @@
-package com.example.sheriffswordhunt.data.repository
+package com.example.sheriffswordhunt.data.mission
 
-import com.example.sheriffswordhunt.data.model.MissionCase
-import com.example.sheriffswordhunt.data.model.MissionQuestion
+import com.example.sheriffswordhunt.data.models.MissionCase
+import com.example.sheriffswordhunt.data.models.MissionQuestion
 
 // ========== REPOSITORY CONTRACT: MISSION DATA ============
 // Provides access to cases and their associated questions.

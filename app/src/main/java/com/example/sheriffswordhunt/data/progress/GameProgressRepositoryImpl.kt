@@ -1,4 +1,4 @@
-package com.example.sheriffswordhunt.data.repository
+package com.example.sheriffswordhunt.data.progress
 
 import android.content.SharedPreferences
 

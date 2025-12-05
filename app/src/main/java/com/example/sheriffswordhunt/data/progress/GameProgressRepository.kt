@@ -1,4 +1,4 @@
-package com.example.sheriffswordhunt.data.repository
+package com.example.sheriffswordhunt.data.progress
 
 // ========== REPOSITORY CONTRACT: GAME PROGRESS ============
 // Defines how the app stores and retrieves player progress.
