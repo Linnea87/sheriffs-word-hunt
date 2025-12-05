@@ -1,7 +1,7 @@
 package com.example.sheriffswordhunt.data.mission
 
-import com.example.sheriffswordhunt.data.model.MissionCase
-import com.example.sheriffswordhunt.data.model.MissionQuestion
+import com.example.sheriffswordhunt.data.models.MissionCase
+import com.example.sheriffswordhunt.data.models.MissionQuestion
 
 // ========== REPOSITORY: MISSION DATA PROVIDER ===============
 // Supplies case and question data for the game.

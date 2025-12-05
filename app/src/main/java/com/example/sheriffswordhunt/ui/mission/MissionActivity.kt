@@ -13,6 +13,8 @@ import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 import android.os.Handler
 import com.example.sheriffswordhunt.ui.common.DialogHelper
 import com.example.sheriffswordhunt.ui.common.ToastHelper
+import com.example.sheriffswordhunt.ui.viewmodels.MissionViewModel
+import com.example.sheriffswordhunt.ui.viewmodels.MissionViewModelFactory
 
 // ========== MISSION ACTIVITY ===================================
 // Handles mission gameplay: loading questions, checking answers,

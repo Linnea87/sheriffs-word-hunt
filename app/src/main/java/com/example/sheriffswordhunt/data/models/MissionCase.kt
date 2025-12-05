@@ -1,4 +1,4 @@
-package com.example.sheriffswordhunt.data.model
+package com.example.sheriffswordhunt.data.models
 
 // ========== DATA MODEL: MISSION CASE ======================================
 // Immutable model representing a mission case with ID, title, and subtitle.
