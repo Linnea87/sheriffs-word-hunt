@@ -1,4 +1,4 @@
-package com.example.sheriffswordhunt.data.repository
+package com.example.sheriffswordhunt.data.mission
 
 import com.example.sheriffswordhunt.data.model.MissionCase
 import com.example.sheriffswordhunt.data.model.MissionQuestion

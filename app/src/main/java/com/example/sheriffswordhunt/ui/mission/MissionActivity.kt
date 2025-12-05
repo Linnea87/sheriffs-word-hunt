@@ -5,10 +5,10 @@ import android.os.Looper
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sheriffswordhunt.R
-import com.example.sheriffswordhunt.data.repository.GameProgressRepository
-import com.example.sheriffswordhunt.data.repository.GameProgressRepositoryImpl
-import com.example.sheriffswordhunt.data.repository.MissionRepository
-import com.example.sheriffswordhunt.data.repository.MissionRepositoryImpl
+import com.example.sheriffswordhunt.data.progress.GameProgressRepository
+import com.example.sheriffswordhunt.data.progress.GameProgressRepositoryImpl
+import com.example.sheriffswordhunt.data.mission.MissionRepository
+import com.example.sheriffswordhunt.data.mission.MissionRepositoryImpl
 import com.example.sheriffswordhunt.databinding.ActivityMissionBinding
 import android.os.Handler
 import com.example.sheriffswordhunt.ui.common.DialogHelper

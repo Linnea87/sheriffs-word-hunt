@@ -2,8 +2,8 @@ package com.example.sheriffswordhunt.ui.mission
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.sheriffswordhunt.data.repository.GameProgressRepository
-import com.example.sheriffswordhunt.data.repository.MissionRepository
+import com.example.sheriffswordhunt.data.progress.GameProgressRepository
+import com.example.sheriffswordhunt.data.mission.MissionRepository
 
 // ========== VIEWMODEL FACTORY: MISSION ===============
 // Creates MissionViewModel with required repositories.
