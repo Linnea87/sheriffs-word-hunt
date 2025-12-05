@@ -237,49 +237,104 @@ Its clean geometric shapes and soft serifs support accessibility, especially for
 [Back to top](#table-of-contents)
 
 ## Features
-Sheriff’s Word Hunt includes a range of features designed to create a smooth, engaging, and child-friendly learning experience.
-This section provides an overview of all implemented functionality, from the home screen and gameplay flow to accessibility-minded UI elements and progress-saving systems.
+Sheriff’s Word Hunt includes a range of features designed to create a smooth, engaging, and child-friendly learning experience.  
+Each screen and component is intentionally kept simple, readable, and predictable to support users with varying cognitive needs.
 
 ### Existing Features
+
 #### Home Screen
-- Hero section with themed Wild West design
-- Clear navigation to Missions, Case Files, and Sheriff’s Orders
-- Child-friendly layout with large touch targets and simple choices
+- Western-themed hero section created from layered drawables
+- Large buttons with custom paper-style design
+- Clear navigation to Start Mission, Sheriff’s Orders, and Case Files
 
-#### Mission Gameplay
-- Three cases (“bandits”) with unique puzzle sets
-- Multiple-choice word puzzles with three answer options
-- Immediate feedback via custom toasts
-- Case progression saved locally (SharedPreferences)
-- “Bandit Captured” dialog when finishing a mission
-- Progress bar showing current mission progress
+<details>
+<summary>Home Screen</summary>
 
-#### Case Files
-- Overview of all cases and their completion status
-- Locked/unlocked system based on player progression
-- Navigation directly into chosen mission
+![Home Screen](docs/home_screen.png)
+
+</details>
 
 #### Sheriff’s Orders
-- Simple, readable explanation of game rules and the story setting
-- Consistent visual style with hero header
+- Simple explanation of the story and rules
+- High readability and low visual complexity
 
-#### Custom UI Components
-- Custom dialog layouts styled with Western paper texture
-- Custom Toast designs for correct/incorrect feedback
-- Reusable hero layout used across multiple screens
+<details>
+<summary>Sheriff's Orders Screen</summary>
 
-#### Progress Saving
-- All case unlocks saved between sessions
-- Mission progress saved automatically
-- Repository-driven question generation for maintainable game logic
-- 
+![Orders Screen](docs/orders_screen.png)
+
+</details>
+
+#### Mission Gameplay
+- Three unique cases with themed word puzzles
+- Multiple-choice answers with clear layout
+- Automatic progress saving after each answer
+- Bandit capture event when all questions in a case are solved
+- Case unlock logic handled by ViewModel + SharedPreferences
+- Toast feedback for every answer
+
+<details>
+<summary>Mission Screen</summary>
+
+![Mission Screen](docs/mission_screen.png)
+
+</details>
+
+#### Feedback System
+To keep the flow quick and non-distracting:
+
+<details>
+<summary>✔ Correct Feedback Toast</summary>
+
+![Correct Toast](docs/correct_screen.png)
+
+</details>
+
+<details>
+<summary>✘ Incorrect Feedback Toast</summary>
+
+![Incorrect Toast](docs/incorrect_screen.png)
+
+</details>
+
+#### Case Files
+- Displays all cases with a progress counter (e.g., **5/6**)
+- Shows which cases are locked/unlocked
+- Locked cases have dimmed UI and disabled interaction
+- Progress updates every time the screen is opened
+
+<details>
+<summary>Case Files Screen</summary>
+
+![Case Files](docs/file_screen.png)
+
+</details>
+
+#### Dialogs (Custom UI Components)
+Dialogs are styled with a Western paper texture and consistent button design.  
+Implemented through a reusable `DialogHelper`.
+
+<details>
+<summary>Case Unlocked Dialog</summary>
+
+![Case Unlocked](docs/unlocked_screen.png)
+
+</details>
+
+<details>
+<summary>Bandit Captured Dialog</summary>
+
+![Bandit Captured](docs/bandit_screen.png)
+
+</details>
+
 ### Future Features
-- **More Cases:** Add additional bandits with new question sets.
-- **Animations:** Smooth transitions when answering questions or unlocking cases.
-- **Sound Effects:** Soft Western-style sounds for correct answers and mission events.
-- **Statistics Screen:** Show total progress, accuracy, and completed missions.
-- **Difficulty Levels:** Introduce beginner/intermediate/advanced modes with varied question types.
-- **Language Settings:** Allow choosing English/Swedish interface and puzzles.
+- Additional cases with new difficulty levels
+- Sound effects for correct answers and mission events
+- Smooth animations between questions
+- Statistics page showing overall progress
+- Optional difficulty settings
+- Language switching (English ↔ Swedish)
 
 [Back to top](#table-of-contents)
 
