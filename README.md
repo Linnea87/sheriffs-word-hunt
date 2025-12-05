@@ -443,25 +443,29 @@ These overrides happen *even when* you manually set `android:background`, causin
 - Switched to `androidx.appcompat.widget.AppCompatButton` to avoid unwanted Material overrides
 - Disabled automatic tinting by removing `backgroundTint`
 - Disabled elevation animations using:
-    ```
+
+  ```
   <item name="android:stateListAnimator">@null</item>
      ```
+  
 ### Setup & Installation
 1. **Clone the repository**
+
    ```
    git clone https://github.com/Linnea87/sheriffs-word-hunt.git
      ```
-2. **Open the project in Android Studio**
+   
+3. **Open the project in Android Studio**
 
     - Minimum Android Studio version: Arctic Fox or higher
     - Allow Gradle to sync automatically
 
-3. **Run the app**
+4. **Run the app**
       - Select an emulator (tested using Pixel 4 + Medium Phone config)
       - or connect a physical Android device
       - Click Run → Run ‘app’
 
-4. **Minimum Requirements**
+5. **Minimum Requirements**
       - Min SDK: API 21 (Android 5.0)
       - Target SDK: API 34
       - Requires no external services or API keys
